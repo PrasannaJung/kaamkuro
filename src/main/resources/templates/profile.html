@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link th:href="@{/lalit_css/profile.css}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+</head>
+
+<body>
+<div class="whole-container">
+    <div class="image-container">
+        <div class="image-detail">
+            <img class="profile-img" src="image/profile.jpg" alt="">
+            <button class="upload-btn" type="button"></button>
+            </button>
+        </div>
+    </div>
+
+    <div class="details">
+        <div class="account-detail">Account Detail</div>
+        <div class="horizontal-gap">
+            <div class="name">
+                <div class="firstname">
+                    <label class="firstname">FirstName:</label><br>
+                    <input class="first-form" id="inputfirst" type="text" placeholder="FirstName">
+                </div>
+                <div class="lastname">
+                    <label class="lastname">LastName:</label><br>
+                    <input class="last-form" id="inputlast" type="text" placeholder="LastName">
+                </div>
+            </div>
+
+            <div class="wrap">
+                <div class="emaildetail">
+                    <style>
+                            .emaildetail {
+                                margin-top: 10px;
+                            }
+                        </style>
+                    <label class="email">Email:</label><br>
+                    <input class="email-form" id="inputemail" type="text" placeholder="Email">
+                </div>
+                <div class="contactdetail">
+                    <label class="contact">Contact:</label><br>
+                    <input class="contact-form" id="inputcontact" type="text" placeholder="Contact Number">
+                </div>
+                <div class="addressdetail">
+                    <label class="address">Address:</label><br>
+                    <input class="address-form" id="inputaddress" type="text" placeholder="Address">
+                </div>
+            </div>
+            <div class="definestate">
+                <div class="citydetail">
+                    <label class="city">City:</label><br>
+                    <input class="city-form" id="inputcity" type="text" placeholder="City">
+                </div>
+                <div class="statedetail">
+                    <label class="state">State:</label><br>
+                    <input class="state-form" id="inputstate" type="text" placeholder="State">
+                </div>
+            </div>
+            <div class="zipinfo">
+
+                <div class="zipcodedetail">
+                    <label class="zipcode">Zip code:</label><br>
+                    <input class="zip-form" id="inputaip" type="text" placeholder="Zip Code">
+                </div>
+                <style>
+                        .countrydetail,
+                        .zipcodedetail {
+                            margin-top: 10px;
+                        }
+                    </style>
+                <div class="countrydetail">
+                    <label class="country">Country:</label><br>
+                    <input class="country-form" id="inputcountry" type="text" placeholder="Country">
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="save">Save</button>
+</div>
+</body>
+
+</html>
