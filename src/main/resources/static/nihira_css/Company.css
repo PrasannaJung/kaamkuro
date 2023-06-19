@@ -1,0 +1,33 @@
+body{
+    
+    background-color: #E7ECEF;
+}
+.card{
+    margin-top: 20px;
+} 
+.about{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+.companyName{
+    color: #274C77;
+    width : 30ch;
+}
+.button{
+    background-color: #274C77;
+    color: white;
+    border-radius: 10px;
+}
+.cont{
+    color:#274C77;
+}
+.button2{
+    color: #274C77;
+}
+.card-body{
+    color:#274C77; 
+}
+.job-listing{
+    padding-left: 40px;
+    padding-right: 40px;
+}
