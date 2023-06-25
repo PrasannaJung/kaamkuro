@@ -20,4 +20,9 @@ public class PagesController {
         return "Resume";
     }
 
+    @GetMapping("/company-profile")
+    public String getCompanyPage(){
+        return "CompanyProf";
+    }
+
 }
