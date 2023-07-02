@@ -10,14 +10,9 @@
   <link rel="stylesheet" type="text/css" th:href="@{/lalit_css/homepage.css}" />
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      var aboutButton = document.querySelector(".about");
       var featureContainer = document.querySelector(".feature-container");
       var contactButton = document.querySelector(".contact");
       var contactContainer = document.querySelector(".paragraph1");
-
-      aboutButton.addEventListener("click", function () {
-        featureContainer.scrollIntoView({ behavior: "smooth" });
-      });
       contactButton.addEventListener("click", function () {
         contactContainer.scrollIntoView({ behavior: "smooth" });
       })
@@ -56,7 +51,7 @@
     }
 
     .feature-heading {
-      background-color: black;
+      /* background-color: black; */
       margin-bottom: 118px;
       padding-left: 520px;
       padding-top: 15px;
@@ -107,7 +102,7 @@
 
     .feature-container {
       display: flex;
-      flex-wrap: wrap;
+      /* flex-wrap: wrap; */
       justify-content: center;
     }
 
@@ -127,6 +122,11 @@
       font-weight: bold;
       color: blue;
     }
+
+    .makeflex {
+      margin-left: 200px;
+      margin-top: 20%;
+    }
   </style>
 
   <div class="background-video">
@@ -141,7 +141,7 @@
         <img class=logo src="resources/image/featurejob.png" alt="logo">
         <div class="buttons-container">
           <button class="contact" onclick="scrollTocontactContainer()">Home</button>
-          <button class="about" onclick="scrollToFeatureContainer()">Featured Jobs</button>
+          <button class="about">About</button>
           <button class="register">Sign Up</button>
           <button class="login">Login</button>
         </div>
@@ -149,11 +149,6 @@
 
       <div class="container3">
         <div class="makeflex">
-          <!-- <div class="logo-container">
-                        <img class=logo1 src="image/featurejob.png" alt="logo1">
-                        <img class=logo2 src="image/featurejob.png" alt="logo2">
-                        <img class=logo3 src="image/featurejob.png" alt="logo3">
-                    </div> -->
           <h1 class="paragraph1">"Unlock your career potential.</h1>
           <p class="paragraph">Our job listing website connects job
           </p>
@@ -168,12 +163,6 @@
             Simplify your job search process with our user-friendly platform.
           </p>
           <button class="getstarted">Get Started</button>
-        </div>
-        <div class="social-icons">
-          <div class="info">For More Info:</div>
-          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
       <div class="fet-container">
@@ -219,6 +208,12 @@
 
 
 
+      </div>
+      <div class="social-icons">
+        <div class="info">For More Info:</div>
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
 
