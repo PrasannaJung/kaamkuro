@@ -25,4 +25,12 @@ public class PagesController {
         return "CompanyProf";
     }
 
+    @GetMapping("/signup")
+    public String getSignupPage(){
+        return "signup";
+    }
+
+    @GetMapping("/login")
+    public String getLoginPage(){return "login"; }
+
 }
