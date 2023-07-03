@@ -1,0 +1,26 @@
+.bod{
+
+    /* margin-top: 10px; */
+    /* padding :40px; */
+}
+
+.body{
+    background-color: #E7ECEF;
+    font-size: 110px;
+    color: #274C77;
+
+}
+.firstdiv{
+    margin-top: 20px;
+    background-color: #274C77;
+    color: #E7ECEF;
+    padding: 4%;
+}
+.secdiv{
+    margin-top: 30px;
+    padding :40px;
+}
+.thirddiv{
+    margin-top: 30px;
+    padding :40px;
+}
