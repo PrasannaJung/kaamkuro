@@ -2,11 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home page</title>
+
   <link rel="stylesheet" type="text/css" th:href="@{/lalit_css/homepage.css}" />
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -215,6 +217,48 @@
     </div>
   </div>
   </div>
+
+  <link th:href="@{/lalit_css/homepage.css}" rel="stylesheet" />
+</head>
+
+
+<body>
+
+<div class="maincontainer">
+  <div class="container1">
+    <img class=logo src="image/joblist.jpg" alt="logo">
+    <div class="buttons-container">
+      <button class="about">About Us</button>
+      <button class="contact">Contact Us</button>
+      <button class="register">Register</button>
+      <button class="login">Login</button>
+    </div>
+    <div class="container3">
+      <div>
+        <p class="paragraph1">"Unlock your career potential.
+          Explore thousands of job opportunities on our job listing website today."</p>
+        <p class="paragraph3">Our job listing website connects job seekers and provider with employers and
+          recruiters.
+          Find and apply for job openings in various industries and locations.
+          Post job listings, search for jobs, and upload your resume.
+          Simplify your job search process with our user-friendly platform.</p>
+
+        <button class="getstarted">Get Started</button>
+      </div>
+      <img class=backgroundimg src="image/listing.jpg" alt="backgroundimg">
+    </div>
+
+    <div class="followus">
+      <p class="us">Follow Us</p>
+      <div>
+        <a class="fb" href="https://www.facebook.com" target="_blank"><img src="image/facebook.png"
+                                                                           alt="Facebook"></a>
+        <a class="ins" href="https://www.instagram.com" target="_blank"><img src="image/instagram.png"
+                                                                             alt="Instagram"></a>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 
 </html>
