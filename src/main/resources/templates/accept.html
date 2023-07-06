@@ -2,8 +2,11 @@
 <html>
 
 <head>
+  <link rel="stylesheet" th:href="@{/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}">
   <style>
-
+  body{
+    background-color: #274C77;
+  }
     .list {
       display: none;
       margin-bottom: 10px;
@@ -21,6 +24,8 @@
       margin-bottom: 10px;
       padding: 5px;
       width: 50%;
+      background-color: azure;
+      border: #ae2d2d;
     }
 
     .headcontainer {
@@ -51,6 +56,15 @@
     .decline,
     .accept {
       margin-left: 10px;
+      background-color:#cccccc ;
+      border-radius: 20%;
+
+    }
+    .accept:hover{
+      background-color:darkorange ;
+    }
+    .decline:hover{
+      background-color:red ;
     }
 
     .button-wrapper {
