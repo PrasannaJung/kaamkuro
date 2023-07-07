@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+  }
+
+  .main {
+    margin-top: 96px;
+  }
+
+  .container {
+    width: min(1000px, 85%);
+    margin-inline: auto;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex {
+    display: flex;
+    gap: 18px;
+  }
+
+  input {
+    width: 100%;
+    padding: 5px 12px;
+    border: 0;
+    outline: none;
+    background: rgb(222, 222, 220);
+    border-radius: 2px;
+  }
+
+  select {
+    border-radius: 2px;
+    border: 0;
+    outline: none;
+    width: 100%;
+    background: rgb(228, 228, 225);
+    padding: 5px 12px;
+  }
+
+  .flex-one {
+    flex: 1;
+  }
+
+  .form > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .buttons {
+    margin-top: 8px;
+  }
+
+  .btn {
+    padding: 3px 7px;
+    border: none;
+    outline: none;
+    background: none;
+    background: transparent;
+  }
+
+  .btn-primary {
+    background-color: rgb(3, 50, 3);
+    color: white;
+    font-weight: bold;
+    margin-right: 4px;
+  }
+
+  .text-editing-buttons {
+    display: flex;
+    gap: 5px;
+    background-color: rgb(222, 222, 220);
+    padding: 5px 10px;
+  }
+
+  textarea {
+    width: 100%;
+  }

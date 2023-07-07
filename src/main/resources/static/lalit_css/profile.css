@@ -1,0 +1,149 @@
+body {
+    background-color: #eaf2e7;
+    margin: auto;
+    position: relative;
+}
+
+
+.whole-container {
+    position: absolute;
+    top: 70%;
+    left: 30%;
+    text-align: center;
+}
+
+.details {
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.account-detail {
+    font-size: 30px;
+    padding-top: 0px;
+    padding-right: 302px;
+}
+
+
+.profile-img {
+    height: 150px;
+    border-radius: 50%;
+
+}
+
+.horizontal-gap {
+    padding: 28px;
+
+}
+
+.user-first,
+.user-last,
+.emaildetail,
+.contactdetail,
+.addressdetail {
+    padding-bottom: 20px;
+}
+
+
+
+.name {
+    display: flex;
+    gap: 0px;
+}
+
+.upload-btn {
+    background-image: url(image/edit.png);
+    position: absolute;
+    top: 122px;
+    left: 310px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 29px;
+    border: none;
+    border-radius: 48%;
+}
+
+.upload-btn:hover {
+    background-color: rgb(255, 132, 0);
+}
+
+
+
+.save {
+    width: 90px;
+    background-color: blue;
+    color: white;
+    font-family: cursive;
+    font-size: 20px;
+    border-radius: 11px;
+    margin-right: 717px;
+}
+
+.save:hover {
+    background-color: black;
+    color: white;
+}
+
+.wrap {
+    padding-right: 282px;
+}
+
+.email-form,
+.contact-form,
+.address-form {
+    width: 513px;
+    height: 35px;
+    border: 2px solid black;
+}
+
+.first-form,
+.last-form {
+    width: 190px;
+    height: 35px;
+    border: 2px solid black;
+}
+
+.firstname,
+.lastname {
+    padding-right: 111px;
+}
+
+.email,
+.contact,
+.address {
+    padding-right: 445px;
+}
+
+.image-container {
+    padding-right: 282px;
+}
+
+.definestate {
+    display: flex;
+    gap: 90px;
+}
+
+.zipinfo {
+    display: flex;
+    gap: 90px;
+}
+
+.city-form,
+.state-form,
+.zip-form,
+.country-form {
+    width: 210px;
+    height: 35px;
+    border: 2px solid black;
+}
+
+.city,
+.state {
+    padding-right: 168px;
+}
+
+.zipcode,
+.country {
+    padding-right: 143px;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" th:href="@{/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}">
+  <style>
+  body{
+    background-color: #274C77;
+  }
+    .list {
+      display: none;
+      margin-bottom: 10px;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Center align the boxes */
+    }
+
+    .container1 {
+      border: 1px solid black;
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 50%;
+      background-color: azure;
+      border: #ae2d2d;
+    }
+
+    .headcontainer {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .profilesection {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .bodycontainer {
+      margin-bottom: 5px;
+    }
+
+    .Service {
+      font-weight: bold;
+    }
+
+    .buttoncontainer {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .decline,
+    .accept {
+      margin-left: 10px;
+      background-color:#cccccc ;
+      border-radius: 20%;
+
+    }
+    .accept:hover{
+      background-color:darkorange ;
+    }
+    .decline:hover{
+      background-color:red ;
+    }
+
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="main-container">
+  <script defer>
+    const names = ["John", "Emily", "Michael", "Sarah", "David", "Olivia"];
+    for (let i = 0; i < 6; i++) {
+      const name = names[i];
+      document.querySelector(".main-container").insertAdjacentHTML("beforeend", `
+          <div class="container1">
+            <div class="headcontainer">
+              <img class="profilesection" src="/image/profile.png" alt="">
+              <div class="name">${name}</div>
+            </div>
+            <div class="bodycontainer">
+              <div class="Service">Service</div>
+              <input type="text" id="myTextbox${i}" name="myTextbox${i}" placeholder="your work description">
+            </div>
+            <div class="buttoncontainer">
+              <button class="decline">Decline</button>
+              <button class="accept">Accept</button>
+            </div>
+          </div>
+        `);
+    }
+  </script>
+</div>
+
+<div class="button-wrapper">
+  <button class="btn" onclick="toggleList()">More</button>
+</div>
+
+<script>
+  const name = ["John", "Emily", "Michael", "Sarah", "David", "Olivia"];
+  let isListVisible = false;
+
+  function toggleList() {
+    var list = document.getElementById("secondList");
+    var button = document.getElementsByClassName("btn")[0];
+    var buttonWrapper = document.getElementsByClassName("button-wrapper")[0];
+
+    if (!list) {
+      // Create the second list if it doesn't exist
+      list = document.createElement("div");
+      list.className = "list";
+      list.id = "secondList";
+
+      for (let i = 0; i < 6; i++) {
+        const name = names[i];
+        const container = document.createElement("div");
+        container.className = "container1";
+        container.innerHTML = `
+            <div class="headcontainer">
+              <img class="profilesection" src="/image/profile.png" alt="">
+              <div class="name">${name}</div>
+            </div>
+            <div class="bodycontainer">
+              <div class="Service">Service</div>
+              <input type="text" id="myTextbox${i}" name="myTextbox${i}" placeholder="your work description">
+            </div>
+            <div class="buttoncontainer">
+              <button class="decline">Decline</button>
+              <button class="accept">Accept</button>
+            </div>
+          `;
+
+        list.appendChild(container);
+      }
+
+      // Insert the second list before the button
+      buttonWrapper.parentNode.insertBefore(list, buttonWrapper.nextSibling);
+    }
+
+    // Toggle the visibility of the second list
+    if (!isListVisible) {
+      list.style.display = "flex";
+      list.style.flexDirection = "column";
+      list.style.alignItems = "center"; /* Center align the boxes */
+      buttonWrapper.style.display = "none";
+      button.style.position = "static";
+      isListVisible = true;
+    } else {
+      list.style.display = "none";
+      buttonWrapper.style.display = "none";
+      buttonWrapper.style.justifyContent = "center";
+      button.style.position = "fixed";
+      isListVisible = false;
+    }
+  }
+</script>
+</body>
+
+</html>
