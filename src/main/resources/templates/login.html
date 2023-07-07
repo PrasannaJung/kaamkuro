@@ -68,7 +68,7 @@
   <div class="container">
     <div class="login-form">
       <h2>Login</h2>
-      <form id="loginForm" action="">
+      <form id="loginForm" th:action="@{/home}">
         <label for="email">Email</label>
         <input type="text" id="email" required>
         <label for="password">Password</label>
@@ -84,30 +84,7 @@
       <img src="sidepic.png" alt="Background Image">
     </div>
   </div>
-  <script>
-    function forgotPassword(){
-      var email = document.getElementById("email").value;
-  // Code to handle forgot password functionality
-      alert('An email has been sent to your registered email address with password reset instructions.');
-    }
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
 
-      var email = document.getElementById("email").value;
-      var password = document.getElementById("password").value;
-      var rememberMe = document.getElementById("rememberMe").checked;
-
-      if (email === "admin" && password === "password") {
-        document.getElementById("message").textContent = "Login successful";
-        if (rememberMe){
-          //to remeber user
-        }
-        // Perform further actions, such as redirecting to another page
-      } else {
-        document.getElementById("message").textContent = "Invalid email or password";
-      }
-    });
-  </script>
 </body>
 </html>
 

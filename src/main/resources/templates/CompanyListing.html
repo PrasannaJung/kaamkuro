@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Company Listing</title>
+  <style>
+    h1 {
+      text-align: center;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .company {
+      background-color: #f2f2f2;
+      margin-bottom: 10px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .company img {
+      width: 100px;
+      margin-right: 10px;
+    }
+
+    .company h2 {
+      margin-top: 0;
+    }
+
+    .company p {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Company Listing in KAAM KURO</h1>
+  <ul id="company-list"></ul>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var companies = [
+        {
+          name: "Company A",
+          description: "This is Company A. We are front-end developers.",
+          logo: "toplogo.png"
+        },
+        {
+          name: "Company B",
+          description: "This is Company B. We are open for full stack developers.",
+          logo: "sidepic.png"
+        },
+        {
+          name: "Company C",
+          description: "This is Company C. ",
+          logo: "sidepic.png"
+        }
+      ];
+
+      var companyList = document.getElementById("company-list");
+
+      for (var i = 0; i < companies.length; i++) {
+        var company = companies[i];
+        var listItem = document.createElement("li");
+        listItem.classList.add("company");
+        listItem.innerHTML = '<img src="' + company.logo + '" alt="Company Logo"><h2>' + company.name + '</h2><p>' + company.description + '</p>';
+        companyList.appendChild(listItem);
+      }
+    });
+  </script>
+</body>
+</html>
