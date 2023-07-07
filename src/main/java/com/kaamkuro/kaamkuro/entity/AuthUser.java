@@ -7,6 +7,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -24,23 +25,16 @@ public class AuthUser implements UserDetails {
 
     private String email;
     private String password;
-    private int role;
 
-    @ManyToMany()
-    @JoinTable(name="users_role",
-                foreignKey = @ForeignKey(name="FK_users_roles_userId"),
-            joinColumns = @JoinColumn(name = "user_id",referencedColumnName = "id"),
-            inverseForeignKey = @ForeignKey(name="FK_users_roles_userId"),
-            inverseJoinColumns = @JoinColumn(name="role_id",referencedColumnName = "id"),
-            uniqueConstraints = @UniqueConstraint(name = "UNIQUE_users_roles_userIdRoleId",
-            columnNames = {"user_id","role_id"})
-    )
-    private Collection<Role> roles;
+    @ManyToOne
+    private Role role;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-//        return getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+        Collection<Role> roles=new ArrayList<>();
+        roles.add(this.getRole());
+        System.out.println(roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList()));
+        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
 
     }
 

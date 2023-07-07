@@ -17,6 +17,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/home","/lalit_css/*","/login","/signup/**")
                 .permitAll()
+                .anyRequest()
+                .authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login")

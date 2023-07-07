@@ -68,7 +68,7 @@
   <div class="container">
     <div class="login-form">
       <h2>Login</h2>
-      <form id="loginForm" th:action="@{/home}">
+      <form id="loginForm" method="post" th:action="@{/login}">
         <label for="email">Email</label>
         <input type="text" id="email" required>
         <label for="password">Password</label>

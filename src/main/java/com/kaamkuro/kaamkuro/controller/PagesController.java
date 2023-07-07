@@ -33,4 +33,7 @@ public class PagesController {
     @GetMapping("/login")
     public String getLoginPage(){return "login"; }
 
+    @GetMapping("/delete-job")
+    public String getDeleteJobPage(){return "deletejoblisting"; }
+
 }

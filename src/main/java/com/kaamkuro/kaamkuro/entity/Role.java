@@ -10,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="users_role")
+@Table(name="roles")
 public class Role {
     @Id
     @SequenceGenerator(name="roles_seq_gen",allocationSize = 1,sequenceName = "roles_seq")
