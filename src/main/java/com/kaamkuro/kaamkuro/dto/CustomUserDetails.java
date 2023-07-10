@@ -4,8 +4,10 @@ import com.kaamkuro.kaamkuro.entity.AuthUser;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
+
 
 public class CustomUserDetails implements UserDetails {
 
@@ -24,12 +26,12 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return this.authUser.getEmail();
+        return this.authUser.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return this.authUser.getPassword();
+        return this.authUser.getEmail();
     }
 
     @Override
