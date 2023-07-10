@@ -4,7 +4,7 @@
     width: 85%;
     margin-top: 0px;
     padding: 110px;
-    height: 70vh;
+    height: 70vh;}
 
 /* body {
     display: flex;
@@ -116,7 +116,7 @@
 .login {
     background-color: black;
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 14px;}
 
 .register,
 .login {
@@ -224,3 +224,4 @@
     border-radius: 20px;
 
 }
+
