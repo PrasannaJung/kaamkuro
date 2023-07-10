@@ -1,4 +1,4 @@
-package com.kaamkuro.kaamkuro.config;
+package com.kaamkuro.kaamkuro.utils;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
