@@ -18,8 +18,8 @@ public class AuthUserServiceImpl implements AuthUserService {
         AuthUser user = new AuthUser();
         user.setEmail(newUser.getEmail());
         user.setRole(newUser.getRole());
-        user.setPassword(PasswordEncoderUtil.getInstance().encode(newUser
-                .getPassword()));
+        String encryptedPassword = PasswordEncoderUtil.getInstance().encode(newUser.getPassword());
+        user.setPassword(encryptedPassword);
         authUserRepo.save(user);
     }
 }
