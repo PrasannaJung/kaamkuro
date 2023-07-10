@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 })
 @Setter
 @Getter
-public class AuthUser implements UserDetails {
+public class AuthUser {
     @Id
     @SequenceGenerator(name="sequence_usr",allocationSize = 1,sequenceName="gen_sequence_usr")
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "gen_sequence_usr")
@@ -25,41 +25,6 @@ public class AuthUser implements UserDetails {
 
     private String email;
     private String password;
+    private String role;
 
-    @ManyToOne
-    private Role role;
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        Collection<Role> roles=new ArrayList<>();
-        roles.add(this.getRole());
-        System.out.println(roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList()));
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-
-    }
-
-    @Override
-    public String getUsername() {
-        return this.email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 }
