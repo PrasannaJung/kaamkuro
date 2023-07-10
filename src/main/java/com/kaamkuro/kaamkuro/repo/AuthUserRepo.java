@@ -8,7 +8,6 @@ import java.util.Optional;
 
 public interface AuthUserRepo extends JpaRepository<AuthUser,Integer> {
 
-    @Query(value = "select * from users where email=?1", nativeQuery = true)
     Optional<AuthUser> findByEmail(String email);
 
 }

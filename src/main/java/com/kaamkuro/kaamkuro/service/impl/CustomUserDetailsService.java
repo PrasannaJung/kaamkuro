@@ -1,5 +1,7 @@
 package com.kaamkuro.kaamkuro.service.impl;
 
+import com.kaamkuro.kaamkuro.dto.CustomUserDetails;
+import com.kaamkuro.kaamkuro.entity.AuthUser;
 import com.kaamkuro.kaamkuro.repo.AuthUserRepo;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -14,6 +16,11 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final AuthUserRepo authUserRepo;
 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return this.authUserRepo.findByEmail(username).orElseThrow(() -> new EntityNotFoundException("User not found."));
+        String EMAIL = username;
+        AuthUser retrievedUser = authUserRepo.findByEmail(username).orElseGet(null);
+        if (retrievedUser == null) {
+            throw new UsernameNotFoundException(String.format("USER WITH EMAIL %s NOT FOUND", username));
+        }
+        return new CustomUserDetails(retrievedUser);
     }
 }
