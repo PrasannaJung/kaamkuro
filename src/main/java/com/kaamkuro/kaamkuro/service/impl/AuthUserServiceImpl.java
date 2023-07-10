@@ -1,6 +1,6 @@
 package com.kaamkuro.kaamkuro.service.impl;
 
-import com.kaamkuro.kaamkuro.config.PasswordEncoderUtil;
+import com.kaamkuro.kaamkuro.utils.PasswordEncoderUtil;
 import com.kaamkuro.kaamkuro.dto.NewUser;
 import com.kaamkuro.kaamkuro.entity.AuthUser;
 import com.kaamkuro.kaamkuro.repo.AuthUserRepo;
