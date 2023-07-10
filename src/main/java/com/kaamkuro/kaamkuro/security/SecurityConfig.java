@@ -12,7 +12,6 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws  Exception{
-
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/home","/lalit_css/*","/login","/signup/**")
