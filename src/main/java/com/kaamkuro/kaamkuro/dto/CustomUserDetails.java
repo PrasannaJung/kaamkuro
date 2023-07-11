@@ -11,7 +11,7 @@ import java.util.*;
 
 public class CustomUserDetails implements UserDetails {
 
-    private AuthUser authUser;
+    private final AuthUser authUser;
 
     public CustomUserDetails(AuthUser authUser){
         this.authUser = authUser;

@@ -38,13 +38,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws  Exception{
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/lalit_css/*","/login","/signup/**")
+                .requestMatchers("/lalit_css/*","/login","/signup/**","/images","/nihira_css","/suyogManandhar")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                 .formLogin()
-                .defaultSuccessUrl("/home")
+                .loginPage("/login")
+                .usernameParameter("email")
+                .defaultSuccessUrl("/home",true)
         ;
 
         return httpSecurity.build();
