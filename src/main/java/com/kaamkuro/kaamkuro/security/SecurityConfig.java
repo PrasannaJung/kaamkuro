@@ -44,6 +44,8 @@ public class SecurityConfig {
                 .authenticated()
                 .and()
                 .formLogin()
+                .loginPage("/login")
+                .usernameParameter("email")
                 .defaultSuccessUrl("/home",true)
         ;
 
