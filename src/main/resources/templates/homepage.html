@@ -2,172 +2,248 @@
 <html lang="en">
 
 <head>
-  <!-- <script src="/script/more.js"></script> -->
-  <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css}">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home page</title>
-  <link rel="stylesheet" th:href="@{/lalit_css/homepage.css}">
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var featureContainer = document.querySelector(".feature-container");
-      var contactButton = document.querySelector(".contact");
-      var contactContainer = document.querySelector(".paragraph1");
-      contactButton.addEventListener("click", function () {
-        contactContainer.scrollIntoView({ behavior: "smooth" });
-      })
-    });
-  </script>
+  <title>responsive job portal </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="home.css">
+
+  <style>
+    .feature-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      padding-left: 0px;
+      margin-top: 10px;
+    }
+
+    .box-1,
+    .box-2,
+    .box-3,
+    .box-4,
+    .box-5,
+    .box-6 {
+      background-color: rgb(44, 39, 39);
+      color: white;
+      width: 155px;
+      flex-basis: calc(50% - 10px);
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .detail {
+      border-radius: 30px;
+      background-color: rgb(91, 91, 204);
+    }
+
+    .feature-heading {
+      /* background-color: black; */
+      margin-bottom: 43px;
+      padding-left: 520px;
+      padding-top: 15px;
+      color: rgb(252, 117, 139);
+    }
+
+    .background-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .detail:hover {
+      background-color: aqua;
+      color: black;
+    }
+
+    .logo-container {
+      text-align: right;
+    }
+
+    .logo-container img {
+      display: inline-block;
+      margin: 10px;
+    }
+
+    .logo1,
+    .logo2,
+    .logo3 {
+      width: 200px;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    .logo1 {
+      padding-top: 40px;
+    }
+
+    .feature-container {
+      display: flex;
+      /* flex-wrap: wrap; */
+      justify-content: center;
+    }
+
+    .feature-container .box-1,
+    .feature-container .box-2,
+    .feature-container .box-3,
+    .feature-container .box-4,
+    .feature-container .box-5,
+    .feature-container .box-6 {
+      width: 33.33%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .info {
+      font-size: 20px;
+      font-weight: bold;
+      color: blue;
+    }
+
+    .makeflex {
+      margin-left: 200px;
+      margin-top: 20%;
+    }
+  </style>
+
 </head>
 
 <body>
-<style>
-  .feature-container {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding-left: 0px;
-    margin-top: 10px;
-  }
+<!-- header section starts      -->
+<header class="header">
 
-  .box-1,
-  .box-2,
-  .box-3,
-  .box-4,
-  .box-5,
-  .box-6 {
-    background-color: rgb(44, 39, 39);
-    color: white;
-    width: 155px;
-    flex-basis: calc(50% - 10px);
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-  }
+  <a href="#" class="logo"> <span>Kaam</span>Kuro </a>
 
-  .detail {
-    border-radius: 30px;
-    background-color: rgb(91, 91, 204);
-  }
+  <div id="menu-btn" class="fas fa-bars"></div>
 
-  .feature-heading {
-    /* background-color: black; */
-    margin-bottom: 43px;
-    padding-left: 520px;
-    padding-top: 15px;
-    color: rgb(252, 117, 139);
-  }
+  <nav class="navbar">
+    <a href="#home">home</a>
+    <a href="#about">about</a>
+    <a href="#features">features</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Sign Up</a>
+  </nav>
 
-  .background-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-  }
+</header>
 
-  .background-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 
-  .detail:hover {
-    background-color: aqua;
-    color: black;
-  }
+<section class="home" id="home">
 
-  .logo-container {
-    text-align: right;
-  }
+  <div class="swiper home-slider">
 
-  .logo-container img {
-    display: inline-block;
-    margin: 10px;
-  }
+    <div class="swiper-wrapper">
 
-  .logo1,
-  .logo2,
-  .logo3 {
-    width: 200px;
-    height: auto;
-    border-radius: 50%;
-  }
-
-  .logo1 {
-    padding-top: 40px;
-  }
-
-  .feature-container {
-    display: flex;
-    /* flex-wrap: wrap; */
-    justify-content: center;
-  }
-
-  .feature-container .box-1,
-  .feature-container .box-2,
-  .feature-container .box-3,
-  .feature-container .box-4,
-  .feature-container .box-5,
-  .feature-container .box-6 {
-    width: 33.33%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .info {
-    font-size: 20px;
-    font-weight: bold;
-    color: blue;
-  }
-
-  .makeflex {
-    margin-left: 200px;
-    margin-top: 20%;
-  }
-</style>
-
-<div class="background-video">
-  <video autoplay muted loop>
-    <source th:src="@{/lalit_css/backvideo.mp4}" type="video/mp4">
-
-  </video>
-</div>
-<div class="maincontainer">
-  <div class="container1">
-    <div class="unchange">
-      <img class=logo src="/image/featurejob.png" alt="logo">
-      <div class="buttons-container">
-        <button class="contact" onclick="scrollTocontactContainer()">Home</button>
-        <button class="about">About</button>
-        <button class="register">Sign Up</button>
-        <button class="login">Login</button>
+      <div class="swiper-slide slide" style="background: url(images/home-bg-2.jpg) no-repeat;">
+        <div class="content">
+          <span>Get Job, Post Job</span>
+          <h3>Make yourself stronger than your excuses.</h3>
+          <a href="#" class="btn">get started</a>
+        </div>
       </div>
-    </div>
 
-    <div class="container3">
-      <div class="makeflex">
-        <h1 class="paragraph1">"Unlock your career potential.</h1>
-        <p class="paragraph">Our job listing website connects job
-        </p>
-        <p class="paragraph"> seekers and provider with employers and
-          recruiters.</p>
-        <p class="paragraph">Find and apply for job openings in various industries and locations.
-          Post job listings,</p>
-        <p class="paragraph">
-          search for jobs, and upload your resume.
-        </p>
-        <p class="paragraph">
-          Simplify your job search process with our user-friendly platform.
-        </p>
-        <button class="getstarted">Get Started</button>
+      <div class="swiper-slide slide" style="background: url(images/home-bg-2.jpg) no-repeat;">
+        <div class="content">
+          <span>Get Job, Post Job</span>
+          <h3>Make yourself stronger than your excuses.</h3>
+          <a href="#" class="btn">get started</a>
+        </div>
+      </div>
+
+      <div class="swiper-slide slide" style="background: url(images/home-bg-3.jpg) no-repeat;">
+        <div class="content">
+          <span>Get Job, Post Job</span>
+          <h3>Make yourself stronger than your excuses.</h3>
+          <a href="#" class="btn">get started</a>
+        </div>
       </div>
 
     </div>
+
+    <div class="swiper-pagination"></div>
+
+  </div>
+</section>
+
+<!-- home section ends -->
+
+<section class="about" id="about">
+
+  <div class="image">
+    <img src="images/about-img.jpg" alt="">
+  </div>
+
+  <div class="content">
+    <span>about us</span>
+    <h3 class="title">Every day is a chance to become better</h3>
+    <p>
+      Embrace each day as an opportunity for personal
+      growth and self-improvement at our gym. Fuel your
+      ambition, push your limits, and transform into the
+      best version of yourself, one workout at a time.</p>
+    <div class="box-container">
+      <div class="box">
+        <h3><i class="fas fa-check"></i>body and mind</h3>
+        <p>
+          Nurture the connection between your body and mind at
+          our gym, where fitness is more than just physical exercise.
+          Discover holistic wellness through invigorating workouts,
+          mindfulness practices, and a supportive community that uplifts
+          both your body and mind.</p>
+      </div>
+      <div class="box">
+        <h3><i class="fas fa-check"></i>healthy life</h3>
+        <p>Experience the power of a healthy life at our gym,
+          where we empower you to make positive choices that
+          nourish your body and enhance your overall well-being.
+          Discover a balanced approach to fitness, nutrition, and
+          self-care that will transform your life for the better.</p>
+      </div>
+      <div class="box">
+        <h3><i class="fas fa-check"></i>strategies</h3>
+        <p>Unlock your full potential with our strategic fitness
+          strategies designed to help you achieve your goals
+          efficiently and effectively. From personalized workout
+          plans to expert guidance, we provide the roadmap to success
+          and empower you to surpass your limits.</p>
+      </div>
+      <div class="box">
+        <h3><i class="fas fa-check"></i>workout</h3>
+        <p>LIgnite your passion for fitness with our dynamic
+          workouts that are tailored to challenge and transform
+          your body. Our experienced trainers and diverse range
+          of exercises will push you to new heights, helping you
+          build strength, endurance, and achieve the results you desire.</p>
+      </div>
+    </div>
+    <a href="#" class="btn">read more</a>
+  </div>
+
+</section>
+
+<!-- about section ends -->
+
+
+
+<!-- features section starts  -->
+
+<section class="features" id="features">
+
+  <h1 class="heading"> <span>Featured Job</span> </h1>
+
+  <div class="box-container">
+
     <div class="fet-container">
-      <h1 class="feature-heading">Featured Job</h1>
       <div class="feature-container">
         <div class="box-1">
           <h2 class="design">Designer</h2>
@@ -208,18 +284,83 @@
       </div>
 
 
+    </div>
 
+</section>
+
+<!-- features section ends -->
+
+
+<!-- trainers section starts  -->
+
+<section class="trainers" id="trainers">
+
+  <h1 class="heading"> <span>expert members</span> </h1>
+
+  <div class="box-container">
+
+    <div class="box">
+      <img src="images/suyog.jpg" alt="">
+      <div class="content">
+        <span>expert member</span>
+        <h3>Suyog Manandhar</h3>
+        <div class="share">
+          <a href="#" class="fab fa-facebook-f"></a>
+          <a href="#" class="fab fa-instagram"></a>
+          <a href="#" class="fab fa-whatsapp"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+        </div>
+      </div>
     </div>
-    <div class="social-icons">
-      <div class="info">For More Info:</div>
-      <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+
+    <div class="box">
+      <img src="images/trainer-2.jpg" alt="">
+      <div class="content">
+        <span>expert member</span>
+        <h3>Prasanna Thapa</h3>
+        <div class="share">
+          <a href="#" class="fab fa-facebook-f"></a>
+          <a href="#" class="fab fa-instagram"></a>
+          <a href="#" class="fab fa-whatsapp"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+        </div>
+      </div>
     </div>
+
+    <div class="box">
+      <img src="images/trainer-3.jpg" alt="">
+      <div class="content">
+        <span>expert member</span>
+        <h3>Paribesh Koju</h3>
+        <div class="share">
+          <a href="#" class="fab fa-facebook-f"></a>
+          <a href="#" class="fab fa-instagram"></a>
+          <a href="#" class="fab fa-whatsapp"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="box">
+      <img src="images/trainer-4.jpg" alt="">
+      <div class="content">
+        <span>expert member</span>
+        <h3>Rishesh Shrestha</h3>
+        <div class="share">
+          <a href="#" class="fab fa-facebook-f"></a>
+          <a href="#" class="fab fa-instagram"></a>
+          <a href="#" class="fab fa-whatsapp"></a>
+          <a href="#" class="fab fa-linkedin"></a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-</div>
-</div>
+</section>
+
+<!-- trainers section ends -->
+
 </body>
 
 </html>
