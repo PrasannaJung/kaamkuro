@@ -59,4 +59,6 @@ public class PagesController {
     @GetMapping("/delete-job")
     public String getDeleteJobPage(){return "deletejoblisting"; }
 
+
+
 }
