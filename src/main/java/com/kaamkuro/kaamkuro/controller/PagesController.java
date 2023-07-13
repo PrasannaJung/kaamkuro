@@ -24,6 +24,29 @@ public class PagesController {
     public String getCompanyPage(){
         return "CompanyProf";
     }
+    @GetMapping("/employee-profile")
+    public String getEmployeePage(){
+        return "Employee profile";
+    }
+
+    @GetMapping("/user/personal-details")
+    public String getPersonalPage(){
+        return "Personaldetails";
+    }
+    @GetMapping("/all-companies")
+    public String getCompanyListing(){
+        return "CompanyListing";
+    }
+
+    @GetMapping("/user-role")
+    public String getUserRole(){
+        return "UserRole";
+    }
+
+    @GetMapping("/user/delete")
+    public String deleteUser(){
+        return "deleteAcc";
+    }
 
     @GetMapping("/signup")
     public String getSignupPage(){
