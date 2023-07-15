@@ -162,7 +162,7 @@
                 <div class="col-md-7 col-lg-8">
                     <h4 class="mb-3">Fill your details</h4>
 
-                    <div class="d-flex align-items-center">
+                    <div class="">
                         <img class="golo" src="../Pictures/Google.png" alt="">
                         <p>Verified <img src="" alt=""></p>
 
@@ -251,8 +251,8 @@
 
 
 <!--                        pop up -->
-                        <div class="container">
-                            <button type="button" class="btn" onclick="openPopup()">Submit</button>
+                        <div class="">
+                            <button type="button" class="btnz" onclick="openPopup()">Submit</button>
                             <div class="popup" id="popup">
                                 <img src="tick.png">
                                 <h2>Thank You!</h2>
@@ -263,11 +263,12 @@
                               let popup = document.getElementById("popup");
   
                               function openPopup(){
-                              popup.classList.add("open-popup");
+                                console.log("hello");
+                              popup.classList.add("openPopup");
                               }
   
                                function closePopup(){
-                              popup.classList.remove("open-popup");
+                              popup.classList.remove("openPopup");
                               }
                           </script>
                         </div>
