@@ -202,6 +202,9 @@
                                         Your username is required.
                                     </div>
                                 </div>
+                                <div class="valid-feedback">
+                                  Looks good!
+                              </div>
                             </div>
 
 
@@ -249,12 +252,27 @@
                                 </div>
                             </div>
                         </div>
+                        <br>
+
+                       
 
 
 
 <!--                        pop up -->
                         <div class="">
-                            <button type="button" class="btnz" onclick="openPopup()">Submit</button>
+
+                          <div class="form-group">
+                            <div class="form-check ">
+                              <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                              <label class="form-check-label" for="invalidCheck3">
+                                Agree to terms and conditions
+                              </label>
+                              <div class="invalid-feedback">
+                                You must agree before submitting.
+                              </div>
+                            </div>
+
+                            <button type="button" class="btnz" onclick="openPopup()" onclick="green()">Submit</button>
                             <div class="popup" id="popup">
                                 <img src="tick.png">
                                 <h2>Thank You!</h2>
