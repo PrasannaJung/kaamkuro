@@ -66,6 +66,10 @@ public class PagesController {
     @GetMapping("/delete-job")
     public String getDeleteJobPage(){return "deletejoblisting"; }
 
+    @GetMapping("/JobListings/JobDetails/applyjob")
+    public String getApplyJob(){
+        return "apply job";
+    }
 
 
 }
