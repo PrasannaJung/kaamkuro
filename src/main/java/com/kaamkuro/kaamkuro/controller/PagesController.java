@@ -9,13 +9,13 @@ public class PagesController {
     public String getHomePage(){
         return "homepage";
     }
-    @GetMapping("/JobListings")
+    @GetMapping("/Joblisting")
     public String getJobListing(){
-        return "joblisting";
+        return "JobListings";
     }
-    @GetMapping("/JobListings/JobDetails")
+    @GetMapping("/Joblisting/JobDetails")
     public String getJobDetails(){
-        return "Job details";
+        return "JobDetails";
     }
     @GetMapping("/user/profile")
     public String getProfilePage(){
