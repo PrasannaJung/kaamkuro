@@ -108,6 +108,13 @@
 
 <div class = "customcontainer d-flex justify-content-center align-items-center min-vh-100">
 
+  <div class="login-error" th:if="${param.error}">
+            Invalid username or password.
+  </div>
+  <div class="logout-message" th:if="${param.logout}">
+            You have been logged out.
+  </div>
+
   <!-- Login Container -->
   <div class="row border rounded-3 p-3 bg-white shadow box-area">
 
