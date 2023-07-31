@@ -7,13 +7,16 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
     <title>Apply Job</title>
+    <link rel="stylesheet" th:href="@{/suyogManandhar/suyog_css/applyjob.css}">
+    <link rel="stylesheet" th:href="@{/suyogManandhar/suyog_css/applyjob.rtl.css}">
+
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
 
 
     <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link th:href="@{/suyogManandhar/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
 
     <style>
       .bd-placeholder-img {
@@ -33,7 +36,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="applyjob.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -66,14 +69,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">
                             <span data-feather="home"></span>
-                            Job Posting
+                            Apply to Job
                         </a>
                         <br>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <span data-feather="file"></span>
-                            Apply to Job
+                            Job Posting
                         </a>
                         <br>
                     </li>
@@ -106,38 +109,6 @@
                     </li>
                 </ul>
 
-                <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                  <span>Saved reports</span>
-                  <a class="link-secondary" href="#" aria-label="Add a new report">
-                    <span data-feather="plus-circle"></span>
-                  </a>
-                </h6>
-                <ul class="nav flex-column mb-2">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Current month
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Last quarter
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Social engagement
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">
-                      <span data-feather="file-text"></span>
-                      Year-end sale
-                    </a>
-                  </li> -->
-                </ul>
             </div>
         </nav>
 
@@ -148,7 +119,7 @@
                     <div class="btn-group me-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
                         <button type="button" >
-                          <a class="btn btn-sm " href="tick.png" download class="download-btn">Download
+                          <a class="btn btn-sm " th:href="@{/images/tick.png}" download>Download
                           <i class="fa fa-download"></i>
                         </a>
                       </button>
@@ -164,17 +135,14 @@
                     <h4 class="mb-3">Fill your details</h4>
 
                     <div class="">
-                        <img class="golo" src="../Pictures/Google.png" alt="">
+                        <img class="golo" th:src="@{/images/Google.png}" alt="">
                         <br> <br>
                         
-                        <p class="Verified">Verified <img class="tick" src="tick.png" alt=""></p>
+                        <p class="Verified">Verified <img class="tick" th:src="@{/images/tick.png}" alt=""></p>
 
                     </div>
                     <form class="needs-validation" novalidate>
                         <div class="row g-3">
-
-
-
                             <div class="mb-3">
                                 <label for="formFile" class="form-label">Your CV</label>
                                 <input class="form-control" type="file" id="formFile">
@@ -193,7 +161,6 @@
                             </div>
 
 
-
                             <div class="col-12">
                                 <label for="username" class="form-label">Username</label>
                                 <div class="input-group has-validation">
@@ -209,7 +176,6 @@
                             </div>
 
 
-
                             <div class="col-12">
                                 <label for="address" class="form-label">Address</label>
                                 <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
@@ -218,10 +184,6 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
-                                <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
-                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-                            </div>
 
                             <div class="col-md-5">
                                 <label for="country" class="form-label">Country</label>
@@ -273,9 +235,9 @@
                               </div>
                             </div>
 
-                            <button type="button" class="btnz" onclick="openPopup()" onclick="green()">Submit</button>
+                            <button type="button" class="btnz" onclick="openPopup()" >Submit</button>
                             <div class="popup" id="popup">
-                                <img src="tick.png">
+                                <img th:src="@{/images/tick.png}">
                                 <h2>Thank You!</h2>
                                 <p>Your form has been successfully submitted. Thanks!</p>
                                 <button type="button" onclick="closePopup()">OK</button>
@@ -298,10 +260,10 @@
 
                         <!-- advanced payment design -->
 
-
-
                             </div>
-                        </div>
+                    </form>
+                </div>
+            </div>
 
 
 
@@ -370,8 +332,10 @@
 
 
 
-        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script th:src="@{/suyogManandhar/assets/dist/js/bootstrap.bundle.min.js}"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+    </div>
+</div>
 </body>
 </html>
