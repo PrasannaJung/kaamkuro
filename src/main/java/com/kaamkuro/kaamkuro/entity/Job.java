@@ -22,14 +22,44 @@ public class Job {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "gen_sequence_job")
     private Integer id;
 
-    @Column(name="job_description")
-    private String description;
+    @Column(name="job_position")
+    private String jobPosition;
     @Column(name="job_salary")
     private Integer salary;
+    @Column(name="company_name")
+    private String companyName;
+    @Column(name = "Job_type")
+    private String jobType;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @ManyToOne
     @JoinColumn(name="company_id")
     private Company company;
+
+
 
     @OneToMany(mappedBy = "job",cascade = CascadeType.ALL)
     private List<Application> applicationsList;
