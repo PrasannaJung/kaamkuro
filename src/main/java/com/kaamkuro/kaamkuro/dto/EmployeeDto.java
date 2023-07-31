@@ -17,5 +17,5 @@ public class EmployeeDto {
     private Integer age;
     private String skill;
     private String profession;
-    
+
 }
