@@ -5,4 +5,5 @@ public class CompanyProfileDto {
     public String address;
     public String number;
     public String email;
+    public String description;
 }
