@@ -13,5 +13,9 @@ public class EmployeeDto {
     private String name;
     private String email;
     private String mydescription;
+    private String language;
+    private Integer age;
+    private String skill;
+    private String profession;
     
 }
