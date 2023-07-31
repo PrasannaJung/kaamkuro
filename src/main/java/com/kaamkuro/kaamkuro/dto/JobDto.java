@@ -10,4 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class JobDto {
+    private String jobname;
+    private String description;
+    private Integer Salary;
 }
