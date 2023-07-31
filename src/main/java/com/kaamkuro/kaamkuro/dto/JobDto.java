@@ -9,10 +9,5 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CompanyProfileDto {
-    private String email;
-    private String phone;
-    private String name;
-    private String description;
-    private String address;
+public class JobDto {
 }

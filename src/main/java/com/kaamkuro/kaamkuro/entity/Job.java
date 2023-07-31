@@ -24,6 +24,7 @@ public class Job {
 
     @Column(name="job_description")
     private String description;
+
     @Column(name="job_salary")
     private Integer salary;
 

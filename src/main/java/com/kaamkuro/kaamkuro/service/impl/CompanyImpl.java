@@ -14,6 +14,7 @@ public class CompanyImpl implements CompanyService {
     @Override
     public void addCompany(CompanyProfileDto addCompany) {
         Company company= new Company();
+        company.setName(company.getName());
         company.setEmail(company.getEmail());
         company.setAddress(company.getAddress());
         company.setDescription(company.getDescription());
