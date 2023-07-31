@@ -14,9 +14,10 @@
     justify-content=center;
 }
 
-.btn{
-    padding:10px 60px;
-    background:#fff;
+.btnz{
+    padding:10px 40px;
+    margin-top: 20px;
+    background:rgb(60, 157, 60);
     border: 0;
     outline: none;
     cursor:pointer;
@@ -36,13 +37,14 @@
     padding: 0 30px 30px;
     color:#333;
     visibility:hidden;
-    transition:transform 0.4s, top 0.4s;
+    transition:transform 0.4s, top 0.6s;
+    border: 2px solid green;
 }
 
 .openPopup{
     visibility:visible;
     top:50%;
-    transform:translate(-50%,-50%)scale(1);
+    transform:translate(-50%,-0%)scale(1);
 }
 
 .popup img{
@@ -50,12 +52,14 @@
     margin-top: -50px;
     border-radius:50%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+
 }
 
 .popup h2{
     font-size:38px;
     font-weight: 500;
     margin: 30px 0 10px;
+    
 }
 
 .popup button{
@@ -202,4 +206,14 @@ body {
     padding-bottom:2px;
     color:green;
     font-family: "Lucida Grande", Geneva, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.Verified{
+  margin-left: 5px;
+}
+
+.tick{
+  width: 3%;
+  height: 5%;
+  margin-bottom: 2px;
 }
