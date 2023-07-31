@@ -31,11 +31,11 @@ public class Company {
     @Column(name = "company_email")
     private String email;
 
-    @Column(name = "company_password")
-    private String password;
-
     @Column(name = "company_phone")
     private String phone;
+
+    @Column(name="company_desc")
+    private String description;
 
     @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
     private List<Job> jobsList;
