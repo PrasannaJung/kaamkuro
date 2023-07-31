@@ -21,6 +21,8 @@ public class Job {
     @SequenceGenerator(name = "sequence_job",allocationSize = 1,sequenceName = "gen_sequence_job")
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "gen_sequence_job")
     private Integer id;
+    @Column(name="jobname")
+    private String jobname;
 
     @Column(name="job_position")
     private String jobPosition;
