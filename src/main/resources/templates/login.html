@@ -123,6 +123,7 @@
     </div>
 
     <!-- Right Box  -->
+    <form id="loginForm" th:method="post" th:action="@{/login}">
     <div class="col-md-6 right-box">
       <div class="row align-items-center">
         <div class="header-text mb-4 " >
@@ -130,14 +131,14 @@
           <p>To start your new journey!</p>
         </div>
         <div class="input-group mb-3">
-          <input type="text" class="form-control-lg bg-light fs-6" placeholder="Email Address" style="width: 100%">
+          <input type="text" class="form-control-lg bg-light fs-6" placeholder="Email Address" style="width: 100%" required>
         </div>
         <div class="input-group mb-1">
-          <input type="password" class="form-control-lg bg-light fs-6" placeholder="Password" style="width: 100%;">
+          <input type="password" class="form-control-lg bg-light fs-6" placeholder="Password" style="width: 100%;" required>
         </div>
 
         <div class="input-group mb-1">
-          <input type="password" class="form-control-lg bg-light fs-6" placeholder="confirmPassword" style="width: 100%;">
+          <input type="password" class="form-control-lg bg-light fs-6" placeholder="confirmPassword" style="width: 100%;" required>
         </div>
 
       </div>
@@ -153,44 +154,45 @@
         <button class="btn btn-lg btn-primary w-100 fs-6">Log in</button>
       </div>
       <div class="input-group mb-3">
-        <button class="btn btn-lg btn-primary w-100 fs-6"><img th:src="@{/images/Google.png}"style="width:20px" class="me-2"><small>Login with google</small></button>
+        <button class="btn btn-lg btn-primary w-100 fs-6"><img th:src="@{/images/Google.png}" style="width:20px" class="me-2"><small>Login with google</small></button>
       </div>
       <div class="row">
         <small>Dont have an account?<a href="#">Sign Up</a></small>
       </div>
     </div>
+    </form>
   </div>
 
 </div>
 </body>
 
 <!--not my code-->
-<body>
-  <div class="container">
-    <div class="login-form">
-      <h2>Login</h2>
-      <div class="login-error" th:if="${param.error}">
-        Invalid username or password.</div>
-      <div class="logout-message" th:if="${param.logout}">
-        You have been logged out.</div>
+<!--<body>-->
+<!--  <div class="container">-->
+<!--    <div class="login-form">-->
+<!--      <h2>Login</h2>-->
+<!--      <div class="login-error" th:if="${param.error}">-->
+<!--        Invalid username or password.</div>-->
+<!--      <div class="logout-message" th:if="${param.logout}">-->
+<!--        You have been logged out.</div>-->
 
-      <form id="loginForm" th:method="post" th:action="@{/login}">
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" required>
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
-        <input type="checkbox" id="rememberMe" name="rememberMe">
-        <label for="rememberMe">Remember Me</label>
-        <input type="submit" value="Login">
-      </form>
-      <p id="message"></p>
-      <a href="#" onclick="forgotPassword()">Forgot Password?</a>
-    </div>
-    <div class="image-container">
-      <img src="sidepic.png" alt="Background Image">
-    </div>
-  </div>
+<!--      <form id="loginForm" th:method="post" th:action="@{/login}">-->
+<!--        <label for="email">Email</label>-->
+<!--        <input type="text" id="email" name="email" required>-->
+<!--        <label for="password">Password</label>-->
+<!--        <input type="password" id="password" name="password" required>-->
+<!--        <input type="checkbox" id="rememberMe" name="rememberMe">-->
+<!--        <label for="rememberMe">Remember Me</label>-->
+<!--        <input type="submit" value="Login">-->
+<!--      </form>-->
+<!--      <p id="message"></p>-->
+<!--      <a href="#" onclick="forgotPassword()">Forgot Password?</a>-->
+<!--    </div>-->
+<!--    <div class="image-container">-->
+<!--      <img src="sidepic.png" alt="Background Image">-->
+<!--    </div>-->
+<!--  </div>-->
 
-</body>
+<!--</body>-->
 </html>
 
