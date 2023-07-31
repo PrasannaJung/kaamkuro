@@ -34,6 +34,7 @@ public class ThymeLeafJobController {
 //                        .item_price(res.getItem_price())
 //                        .item_rating(res.getItem_rating())
                         .jobPosition(res.getJobPosition())
+                        .companyName(res.getCompanyName())
                         .salary(res.getSalary())
                         .jobType(res.getJobType())
                         .build()));
