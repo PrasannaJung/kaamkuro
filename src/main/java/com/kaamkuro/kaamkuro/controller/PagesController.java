@@ -9,6 +9,11 @@ public class PagesController {
     public String getHomePage(){
         return "homepage";
     }
+
+    @GetMapping("/applyjobs")
+    public String getJobInfo() {return "applyjob" ;}
+
+
     @GetMapping("/Joblisting")
     public String getJobListing(){
         return "JobListings";
@@ -66,10 +71,12 @@ public class PagesController {
     @GetMapping("/delete-job")
     public String getDeleteJobPage(){return "deletejoblisting"; }
 
-    @GetMapping("/JobListings/JobDetails/applyjob")
-    public String getApplyJob(){
-        return "apply job";
-    }
+//    @GetMapping("/JobListings/JobDetails/applyjob")
+//    public String getApplyJob(){
+//        return "applyjob";
+//    }
+
+
 
 
 }
