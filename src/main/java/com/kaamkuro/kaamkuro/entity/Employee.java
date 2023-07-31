@@ -27,6 +27,7 @@ public class Employee {
     @Column(name="employee_email")
     private String email;
 
+    @Column(name="employee_age")
     private Integer age;
 
     @Column(name="employee_lang")
