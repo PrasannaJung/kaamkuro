@@ -14,13 +14,11 @@ import lombok.Setter;
 public class JobDto {
     private Integer id;
 
-    @NotEmpty(message = "name can't be empty")
-    private String jobname;
-
     @NotEmpty (message = "position can't be empty")
     private String jobPosition;
 
-    private Integer Salary;
+    @NotEmpty (message = "salary can't be empty")
+    private String salary;
 
     @NotEmpty (message = "companyName can't be empty")
     private String companyName;
@@ -30,9 +28,8 @@ public class JobDto {
 
     public JobDto(Job job){
         this.id = job.getId();
-        this.jobname = job.getJobname();
         this.jobPosition = job.getJobPosition();
-        this.Salary = job.getSalary();
+        this.salary = job.getSalary();
         this.companyName = job.getCompanyName();
         this.jobType = job.getJobType();
     }

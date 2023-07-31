@@ -19,13 +19,13 @@ public class Job {
     @SequenceGenerator(name = "sequence_job",allocationSize = 1,sequenceName = "gen_sequence_job")
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "gen_sequence_job")
     private Integer id;
-    @Column(name="jobname")
-    private String jobname;
+//    @Column(name="jobname")
+//    private String jobname;
 
     @Column(name="job_position")
     private String jobPosition;
     @Column(name="job_salary")
-    private Integer salary;
+    private String salary;
     @Column(name="company_name")
     private String companyName;
     @Column(name = "Job_type")

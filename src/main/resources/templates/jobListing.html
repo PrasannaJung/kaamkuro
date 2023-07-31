@@ -42,42 +42,22 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 mt-2 g-4 p-4">
 
-    <div class="col">
+    <div class="col" th:each="item:${items}">
       <div class="card">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h9>Designer</h9>
-          <h5 class="card-title"> UI/UX Designer</h5>
-          <h7>Company Name |</h7>
+<!--          <h5 class="card-title"> UI/UX Designer</h5>-->
+          <h5 th:text="${item.jobPosition}"></h5>
+<!--          <h7>Company Name |</h7>-->
+          <h7 th:text="${item.companyName}"></h7>
           <h7>Full Time |</h7>
+          <
           <h7>Salary |</h7>
 
           <p class="card-text"></p>
           <button type="button" class="btn btn-outline-primary btn-sm "><a href="#" th:href="@{/JobListings.html/JobDetails}" >Apply</a></button>
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card">
-        <div class="card-body">
-          <h9>Designer</h9>
-          <h5 class="card-title"> UI/UX Designer</h5>
-          <h7>Company Name   |    </h7>
-          <h7>Full Time</h7>
-          <p class="card-text"></p>
-          <button type="button" class="btn btn-outline-primary btn-sm"><a href="#" th:href="@{/JobListings/JobDetails}">Apply</a></button>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-body">
-        <h9>Designer</h9>
-        <h5 class="card-title"> UI/UX Designer</h5>
-        <h7>Company Name   |    </h7>
-        <h7>Full Time</h7>
-        <p class="card-text"></p>
-        <button type="button" class="btn btn-outline-primary btn-sm "><a href = "JobDetails.html">Apply</a></button>
       </div>
     </div>
   </div>
@@ -86,25 +66,26 @@
 
 <h2 class="fst-italic ms-5">Add Job</h2>
 <div class="container">
-  <form action="">
+  <form th:method="@{post}" th:action="@{/th-job/save}" th:object="${jobDto}" >
     <div class="mb-3">
+      <input type="hidden" th:value="${jobDto.id}" th:field="*{id}"/>
       <label for="exampleFormControlInput1" class="form-label">Company Name</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="company name">
+      <input type="text" th:value="${jobDto.companyName}" th:field="*{companyName}" class="form-control" id="exampleFormControlInput1" placeholder="company name">
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Job Position</label>
-      <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="job position">
+      <input type="text" th:value="${jobDto.jobPosition}" th:field="*{jobPosition}" class="form-control" id="exampleFormControlInput2" placeholder="job position">
     </div>
 
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Job Salary</label>
-      <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="job salary">
+      <input type="text" th:value="${jobDto.salary}" th:field="*{salary}" class="form-control" id="exampleFormControlInput3" placeholder="job salary">
     </div>
 
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Job Timing</label>
-      <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="Job timing">
+      <label for="exampleFormControlInput1" class="form-label">Job type</label>
+      <input type="text" th:value="${jobDto.jobType}" th:field="*{jobType}" class="form-control" id="exampleFormControlInput4" placeholder="Job type">
     </div>
 
     <div class="d-grid gap-2 col-6 mx-auto">

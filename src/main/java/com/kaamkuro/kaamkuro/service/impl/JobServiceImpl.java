@@ -21,7 +21,6 @@ public class JobServiceImpl implements JobService {
     public void saveData(JobDto jobDto) throws IOException {
         Job job = new Job();
         job.setId(jobDto.getId());
-        job.setJobname(jobDto.getJobname());
         job.setJobPosition(jobDto.getJobPosition());
         job.setSalary(jobDto.getSalary());
         job.setCompanyName(jobDto.getCompanyName());
