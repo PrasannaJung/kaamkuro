@@ -46,14 +46,15 @@
       <div class="card">
         <!-- <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
-          <h9>Designer</h9>
+          <h9>Job Description</h9>
 <!--          <h5 class="card-title"> UI/UX Designer</h5>-->
           <h5 th:text="${item.jobPosition}"></h5>
 <!--          <h7>Company Name |</h7>-->
           <h7 th:text="${item.companyName}"></h7>
-          <h7>Full Time |</h7>
-          <
-          <h7>Salary |</h7>
+<!--          <h7>Job Type |</h7>-->
+          <h7 th:text="${item.jobType}"></h7>
+<!--          <h7>Salary |</h7>-->
+          <h7 th:text="${item.salary}"></h7>
 
           <p class="card-text"></p>
           <button type="button" class="btn btn-outline-primary btn-sm "><a href="#" th:href="@{/JobListings.html/JobDetails}" >Apply</a></button>
@@ -89,10 +90,11 @@
     </div>
 
     <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-primary" type="button">Add Job</button>
+      <button class="btn btn-primary" type="submit">Add Job</button>
+
 
     </div>
   </form>
 </div>
-</div>
+
 </body>
