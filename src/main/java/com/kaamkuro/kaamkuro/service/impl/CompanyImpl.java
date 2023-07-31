@@ -14,6 +14,11 @@ public class CompanyImpl implements CompanyService {
     @Override
     public void addCompany(CompanyProfileDto addCompany) {
         Company company= new Company();
-        company.setEmail("Comp");
+        company.setEmail(company.getEmail());
+        company.setAddress(company.getAddress());
+        company.setDescription(company.getDescription());
+        company.setPhone(company.getPhone());
+        company.setId(company.getId());
+
     }
 }
