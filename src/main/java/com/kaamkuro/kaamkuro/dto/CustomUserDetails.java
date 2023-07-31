@@ -10,7 +10,6 @@ import java.util.*;
 
 
 public class CustomUserDetails implements UserDetails {
-
     private final AuthUser authUser;
 
     public CustomUserDetails(AuthUser authUser){
