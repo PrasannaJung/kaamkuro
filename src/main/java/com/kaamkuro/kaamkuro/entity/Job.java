@@ -2,10 +2,7 @@ package com.kaamkuro.kaamkuro.entity;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,6 +10,7 @@ import java.util.List;
 @Table
 @Getter
 @Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Job {
@@ -21,13 +19,13 @@ public class Job {
     @SequenceGenerator(name = "sequence_job",allocationSize = 1,sequenceName = "gen_sequence_job")
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "gen_sequence_job")
     private Integer id;
-    @Column(name="jobname")
-    private String jobname;
+//    @Column(name="jobname")
+//    private String jobname;
 
     @Column(name="job_position")
     private String jobPosition;
     @Column(name="job_salary")
-    private Integer salary;
+    private String salary;
     @Column(name="company_name")
     private String companyName;
     @Column(name = "Job_type")
