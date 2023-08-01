@@ -38,4 +38,7 @@ public class CompanyImpl implements CompanyService {
         Company company = new Company();
         return companyRepo.findByEmail(email).get();
     }
+    public void updateCompany(Company companyprofile) {
+        companyRepo.save(companyprofile);
+    }
 }
