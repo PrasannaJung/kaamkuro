@@ -162,10 +162,10 @@
 
 
                             <div class="col-12">
-                                <label for="username" class="form-label">Username</label>
+                                <label for="username" class="form-label">Fullname</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">@</span>
-                                    <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                    <input name="fullname" type="text" class="form-control" id="username" placeholder="FullName" required>
                                     <div class="invalid-feedback">
                                         Your username is required.
                                     </div>
@@ -175,10 +175,18 @@
                               </div>
                             </div>
 
+                            <div class="col-12">
+                                <label for="address" class="form-label">Job Position</label>
+                                <input name="jobposition" type="text" class="form-control" id="jobposition" placeholder="manager" required>
+                                <div class="invalid-feedback">
+                                    Please enter a position.
+                                </div>
+                            </div>
+
 
                             <div class="col-12">
                                 <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                                <input name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                                 <div class="invalid-feedback">
                                     Please enter your real address.
                                 </div>
@@ -186,8 +194,8 @@
 
 
                             <div class="col-md-5">
-                                <label for="country" class="form-label">Country</label>
-                                <select class="form-select" id="country" required>
+                                <label  for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country" name="country" required>
                                     <option value="">Choose...</option>
                                     <option>United States</option>
                                 </select>
@@ -196,20 +204,10 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <label for="state" class="form-label">State</label>
-                                <select class="form-select" id="state" required>
-                                    <option value="">Choose...</option>
-                                    <option>California</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please provide a valid state.
-                                </div>
-                            </div>
 
                             <div class="col-md-3">
                                 <label for="zip" class="form-label">Phone number</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" required>
+                                <input type="text" class="form-control" id="zip" placeholder="" name="phoneNumber" required>
                                 <div class="invalid-feedback">
                                     Zip code required.
                                 </div>
