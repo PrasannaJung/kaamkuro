@@ -27,6 +27,9 @@ public class Employee {
     @Column(name="employee_email")
     private String email;
 
+    @Column(name="employee_password")
+    private String password;
+
     @Column(name="employee_age")
     private Integer age;
 

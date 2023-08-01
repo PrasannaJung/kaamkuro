@@ -10,8 +10,10 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeeDto {
+    private Integer id;
     private String name;
     private String email;
+    private String password;
     private String mydescription;
     private String language;
     private Integer age;
