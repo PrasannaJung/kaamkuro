@@ -22,6 +22,9 @@ public class ApplyJobDto {
     private String jobposition;
 
     @NotEmpty(message = "name can't be empty")
+    private String phoneNumber;
+
+    @NotEmpty(message = "name can't be empty")
     private String address;
 
     @NotEmpty(message = "name can't be empty")
@@ -36,7 +39,7 @@ public class ApplyJobDto {
     @NotEmpty(message = " email can't be empty")
     private String email;
 
-    private Integer phoneNumber;
+
 
 
 

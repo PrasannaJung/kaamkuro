@@ -45,3 +45,4 @@ public class ApplyJob {
     @Column(name = "description", nullable = false)
     private String description;
 }
+
