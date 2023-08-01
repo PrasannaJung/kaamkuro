@@ -40,7 +40,6 @@ public class ProfileController {
         existingProfile.setSkill(employeeDto.getSkill());
         existingProfile.setMainLang(employeeDto.getLanguage());
         employeeService.update(existingProfile);
-
         return "redirect:/employee/profile";
     }
 }
