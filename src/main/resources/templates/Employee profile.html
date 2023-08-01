@@ -135,7 +135,7 @@
           <h4 class="mb-3">Fill your details</h4>
               </div>
 
-        <form>
+        <form th:action="@{/employee/profile/update}" th:method="@{post}">
           <input type="hidden" name="id" th:value="${profile.id}">
           <div class="col-12">
             <div class="mb-3">
@@ -191,7 +191,7 @@
             </div>
           </div>
           <div class="text-center">
-            <button class="bg-success px-3 py-1 btn-lg">Save Changes</button>
+            <button type="submit" class="bg-success px-3 py-1 btn-lg">Save Changes</button>
           </div>
 
         </form>
