@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
@@ -13,11 +14,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ProfileController {
     private final EmployeeService employeeService;
     @GetMapping("/employee/profile")
-    public String getProfile(){
+    public String getProfile(Model model){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
         Employee profile = employeeService.getEmployee(email);
         System.out.println(profile.getEmail());
+        model.addAttribute("profile",profile);
         return "Employee profile";
     }
 }

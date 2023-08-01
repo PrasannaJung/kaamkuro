@@ -133,65 +133,65 @@
 
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">Fill your details</h4>
-
-         <h>Form prasanna</h>
               </div>
 
         <form>
+          <input type="hidden" name="id" th:value="${profile.id}">
           <div class="col-12">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+              <label for="exampleFormControlInput7" class="form-label">Email address</label>
+              <input th:value="${profile.email}" type="email" class="form-control" name="email" id="exampleFormControlInput7" placeholder="">
             </div>
           </div>
 
           <div class="col-12">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="name@example.com">
+              <label for="exampleFormControlInput8" class="form-label">Username</label>
+              <input type="text" class="form-control" id="exampleFormControlInput8" th:value="${profile.name}" name="name" placeholder="">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Description</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" th:value="${profile.desc}" name="mydescription" placeholder="">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="mb-3">
+              <label for="exampleFormControlInput6" class="form-label">Age</label>
+              <input type="number" class="form-control" id="exampleFormControlInput6" th:value="${profile.age}" name="age" placeholder="">
             </div>
           </div>
 
           <div class="col-12">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput3" placeholder="name@example.com">
+              <label for="exampleFormControlInput2" class="form-label">New Password</label>
+              <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="">
             </div>
           </div>
 
           <div class="col-12">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput4" placeholder="name@example.com">
+              <label for="exampleFormControlInput3" class="form-label">Language(Major)</label>
+              <input type="text" class="form-control" id="exampleFormControlInput3" th:value="${profile.mainLang}" name="language" placeholder="Nepali">
             </div>
           </div>
 
           <div class="col-12">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput5" placeholder="name@example.com">
+              <label for="exampleFormControlInput4" class="form-label">Profession(What do you do?)</label>
+              <input type="text" class="form-control" id="exampleFormControlInput4" th:value="${profile.profession}" name="profession" placeholder="Student">
             </div>
           </div>
 
           <div class="col-12">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput6" placeholder="name@example.com">
+              <label for="exampleFormControlInput5" class="form-label">Major Skill</label>
+              <input type="text" class="form-control" id="exampleFormControlInput5" th:value="${profile.skill}" name="skill" placeholder="UI/UX Designer">
             </div>
           </div>
-
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput7" placeholder="name@example.com">
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Email address</label>
-              <input type="text" class="form-control" id="exampleFormControlInput8" placeholder="name@example.com">
-            </div>
+          <div class="text-center">
+            <button class="bg-success px-3 py-1 btn-lg">Save Changes</button>
           </div>
 
         </form>
