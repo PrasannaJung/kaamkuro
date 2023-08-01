@@ -7,5 +7,7 @@ import com.kaamkuro.kaamkuro.entity.Employee;
 
 public interface CompanyService {
     void addCompany(CompanyProfileDto addCompany);
-    Company getCompany(String email);
+    Company getCompanyEmail(String email);
+
+    void updateCompany(Company companyProfile);
 }
