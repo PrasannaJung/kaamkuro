@@ -33,13 +33,8 @@ public class Company {
 
     @Column(name = "company_phone")
     private String phone;
-
+    @Column(name = "password")
+    private String password;
     @Column(name="company_desc")
     private String description;
-
-    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
-    private List<Job> jobsList;
-
-    @OneToMany(mappedBy = "company",cascade = CascadeType.ALL)
-    private  List<Employee> employeeList;
 }
