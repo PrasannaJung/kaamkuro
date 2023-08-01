@@ -33,7 +33,8 @@ public class Company {
 
     @Column(name = "company_phone")
     private String phone;
-
+    @Column(name = "password")
+    private String password;
     @Column(name="company_desc")
     private String description;
 }
