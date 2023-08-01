@@ -24,4 +24,9 @@ public class EmployeeImpl implements EmployeeService {
     public Employee getEmployee(String email) {
         return employeeRepo.findByEmail(email).get();
     }
+
+    @Override
+    public void update(Employee existingProfile) {
+        employeeRepo.save(existingProfile);
+    }
 }

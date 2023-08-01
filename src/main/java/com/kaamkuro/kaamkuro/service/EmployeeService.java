@@ -7,4 +7,6 @@ public interface EmployeeService {
     void addEmployee(EmployeeDto employeeDto);
 
     Employee getEmployee(String email);
+
+    void update(Employee existingProfile);
 }
