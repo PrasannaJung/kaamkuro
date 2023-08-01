@@ -19,4 +19,9 @@ public class EmployeeImpl implements EmployeeService {
         employee.setPassword(PasswordEncoderUtil.getInstance().encode(employeeDto.getPassword()));
         employeeRepo.save(employee);
     }
+
+    @Override
+    public Employee getEmployee(String email) {
+        return employeeRepo.findByEmail(email).get();
+    }
 }
