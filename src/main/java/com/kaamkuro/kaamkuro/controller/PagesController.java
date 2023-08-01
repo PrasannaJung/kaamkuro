@@ -32,15 +32,6 @@ public class PagesController {
         return "Resume";
     }
 
-    @GetMapping("/company-profile")
-    public String getCompanyPage(){
-        return "CompanyProf";
-    }
-    @GetMapping("/employee-profile")
-    public String getEmployeePage(){
-        return "Employee profile";
-    }
-
     @GetMapping("/user/personal-details")
     public String getPersonalPage(){
         return "Personaldetails";
@@ -71,10 +62,6 @@ public class PagesController {
     @GetMapping("/delete-job")
     public String getDeleteJobPage(){return "deletejoblisting"; }
 
-//    @GetMapping("/JobListings/JobDetails/applyjob")
-//    public String getApplyJob(){
-//        return "applyjob";
-//    }
 
 
 

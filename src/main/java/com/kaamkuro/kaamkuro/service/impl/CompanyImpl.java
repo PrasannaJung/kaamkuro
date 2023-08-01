@@ -15,17 +15,7 @@ import org.springframework.stereotype.Service;
 public class CompanyImpl implements CompanyService {
 
     private final CompanyRepo companyRepo;
-//    @Override
-//    public void addCompany(CompanyProfileDto addCompany) {
-//        Company company= new Company();
-//        company.setName(company.getName());
-//        company.setEmail(company.getEmail());
-//        company.setAddress(company.getAddress());
-//        company.setDescription(company.getDescription());
-//        company.setPhone(company.getPhone());
-//        company.setId(company.getId());
-//        companyRepo.save(company);
-//    }
+
     @Override
     public void addCompany(CompanyProfileDto companyProfileDto) {
         Company company = new Company();
@@ -35,10 +25,10 @@ public class CompanyImpl implements CompanyService {
     }
     @Override
     public Company getCompanyEmail(String email) {
-        Company company = new Company();
         return companyRepo.findByEmail(email).get();
     }
     public void updateCompany(Company companyprofile) {
+
         companyRepo.save(companyprofile);
     }
 }
