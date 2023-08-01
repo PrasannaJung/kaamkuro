@@ -3,33 +3,26 @@ body {
     margin: auto;
     position: relative;
 }
-
-
 .whole-container {
     position: absolute;
     top: 70%;
     left: 30%;
     text-align: center;
 }
-
 .details {
     font-family: cursive;
     font-weight: bold;
 }
-
 .account-detail {
     font-size: 30px;
     padding-top: 0px;
     padding-right: 302px;
 }
-
-
 .profile-img {
     height: 150px;
     border-radius: 50%;
 
 }
-
 .horizontal-gap {
     padding: 28px;
 
