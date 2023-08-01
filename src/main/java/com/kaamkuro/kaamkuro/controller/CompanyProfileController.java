@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @RequiredArgsConstructor
 public class CompanyProfileController {
     private final CompanyService companyService;
-    private final CompanyRepo companyRepo;
 
     @GetMapping("/company/profile")
     public String getCompProfile(Model model){
@@ -27,22 +26,22 @@ public class CompanyProfileController {
         Company profile = companyService.getCompanyEmail(email);
         System.out.println(profile.getEmail());
         model.addAttribute("profile",profile);
-        return "CompanyProf profile";
+        return "CompanyProf";
     }
     @PostMapping("/company/profile/update")
     public String updateCompany(@ModelAttribute CompanyProfileDto companyProfileDto){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
         Company company= companyService.getCompanyEmail(email);
-        company.setName(company.getName());
-        company.setEmail(company.getEmail());
-        company.setAddress(company.getAddress());
-        company.setDescription(company.getDescription());
-        company.setPhone(company.getPhone());
-        company.setId(company.getId());
-        company.setPassword(company.getPassword());
+        company.setName(companyProfileDto.getName());
+        company.setEmail(companyProfileDto.getEmail());
+        company.setAddress(companyProfileDto.getAddress());
+        company.setDescription(companyProfileDto.getDescription());
+        company.setPhone(companyProfileDto.getPhone());
+        company.setId(companyProfileDto.getId());
+        company.setPassword(companyProfileDto.getPassword());
         companyService.updateCompany(company);
-        return "redirect:/company/prfile";
+        return "redirect:/company/profile";
     }
 
 }
