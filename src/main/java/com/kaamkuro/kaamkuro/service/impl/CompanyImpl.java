@@ -2,6 +2,7 @@ package com.kaamkuro.kaamkuro.service.impl;
 
 import com.kaamkuro.kaamkuro.dto.CompanyProfileDto;
 import com.kaamkuro.kaamkuro.entity.Company;
+import com.kaamkuro.kaamkuro.entity.Employee;
 import com.kaamkuro.kaamkuro.repo.CompanyRepo;
 import com.kaamkuro.kaamkuro.service.CompanyService;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,11 @@ public class CompanyImpl implements CompanyService {
         company.setPhone(company.getPhone());
         company.setId(company.getId());
         companyRepo.save(company);
+    }
+
+    @Override
+    public Company getCompany(String email) {
+        Company company = new Company();
+        return companyRepo.findByEmail(email).get();
     }
 }
