@@ -32,4 +32,16 @@ public class ApplyJob {
 
     @Column(name = "phoneNumber", nullable = false)
     private String phoneNumber;
+
+
+    @Column(name = "cv", nullable = false)
+    private String cv;
+
+
+    @Column(name = "email", nullable = false)
+    private String email;
+
+
+    @Column(name = "description", nullable = false)
+    private String description;
 }
