@@ -99,7 +99,7 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">heladkfad</h1>
+        <h1 class="h2">JOBS</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -118,7 +118,8 @@
 
         <div class="col-md-7 col-lg-8">
           //jobs available
-          <h1 class="mt-5 fst-italic ms-">Jobs Available</h1>
+          <h1 class="mt-5 fst-italic text-primary">Jobs Available</h1>
+          <hr>
           <div class="container">
             <div class="row row-cols-1 row-cols-md-3 mt-2 g-4 p-4">
 
@@ -145,7 +146,8 @@
           </div>
 
 
-          <h2 class="fst-italic ms-5">Add Job</h2>
+          <h2 class="fst-italic text-primary">Add Job</h2>
+          <hr>
           <div class="container">
             <form th:method="@{post}" th:action="@{/th-job/save}" th:object="${jobDto}" >
               <div class="mb-3">
