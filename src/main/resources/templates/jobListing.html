@@ -6,91 +6,324 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <title>Job Listing</title>
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
 </head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">KamKuro</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow align-items-center">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
+  <div class="w-100 d-flex justify-content-center align-items-center">
+    <ul class="d-flex text-white align-items-center" style="list-style-type: none; gap: 40px; padding: 0; ">
+      <li>Home</li>
+      <li>About</li>
+      <li>Companies</li>
+      <li>Jobs</li>
+    </ul>
+  </div>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="#">Sign out</a>
     </div>
   </div>
-</nav>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <span data-feather="home"></span>
+              Apply to Job
+            </a>
+            <br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Job Posting
+            </a>
+            <br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Job listing
+            </a>
+            <br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Profile
+            </a>
+            <br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              logout
+            </a>
+            <br>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              home
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">heladkfad</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" >
+              <a class="btn btn-sm " th:href="@{/images/tick.png}" download>Download
+                <i class="fa fa-download"></i>
+              </a>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Job posting form -->
+      <div>
+
+        <div class="col-md-7 col-lg-8">
+          //jobs available
+          <h1 class="mt-5 fst-italic ms-">Jobs Available</h1>
+          <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 mt-2 g-4 p-4">
+
+              <div class="col" th:each="item:${items}">
+                <div class="card">
+                  <!-- <img src="..." class="card-img-top" alt="..."> -->
+                  <div class="card-body">
+                    <h9>Job Description</h9>
+                    <!--          <h5 class="card-title"> UI/UX Designer</h5>-->
+                    <h5 th:text="${item.jobPosition}"></h5>
+                    <!--          <h7>Company Name |</h7>-->
+                    <h7 th:text="${item.companyName}"></h7>
+                    <!--          <h7>Job Type |</h7>-->
+                    <h7 th:text="${item.jobType}"></h7>
+                    <!--          <h7>Salary |</h7>-->
+                    <h7 th:text="${item.salary}"></h7>
+
+                    <p class="card-text"></p>
+                    <button type="button" class="btn btn-outline-primary btn-sm "><a href="#" th:href="@{/JobListings.html/JobDetails}" >Apply</a></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <h2 class="fst-italic ms-5">Add Job</h2>
+          <div class="container">
+            <form th:method="@{post}" th:action="@{/th-job/save}" th:object="${jobDto}" >
+              <div class="mb-3">
+                <input type="hidden" th:value="${jobDto.id}" th:field="*{id}"/>
+                <label for="exampleFormControlInput1" class="form-label">Company Name</label>
+                <input type="text" th:value="${jobDto.companyName}" th:field="*{companyName}" class="form-control" id="exampleFormControlInput1" placeholder="company name">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Job Position</label>
+                <input type="text" th:value="${jobDto.jobPosition}" th:field="*{jobPosition}" class="form-control" id="exampleFormControlInput2" placeholder="job position">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Job Salary</label>
+                <input type="text" th:value="${jobDto.salary}" th:field="*{salary}" class="form-control" id="exampleFormControlInput3" placeholder="job salary">
+              </div>
+
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Job type</label>
+                <input type="text" th:value="${jobDto.jobType}" th:field="*{jobType}" class="form-control" id="exampleFormControlInput4" placeholder="Job type">
+              </div>
+
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="submit">Add Job</button>
+
+
+              </div>
+            </form>
+          </div>
+
+
+
+        </div>
+            <br>
+
+
+            <!--                        pop up -->
+<!--            <div class="">-->
+
+<!--              <div class="form-group">-->
+<!--                <div class="form-check ">-->
+<!--                  <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>-->
+<!--                  <label class="form-check-label" for="invalidCheck3">-->
+<!--                    Agree to terms and conditions-->
+<!--                  </label>-->
+<!--                  <div class="invalid-feedback">-->
+<!--                    You must agree before submitting.-->
+<!--                  </div>-->
+<!--                </div>-->
+
+<!--                <button type="button" class="btnz" onclick="openPopup()" >Submit</button>-->
+<!--                <div class="popup" id="popup">-->
+<!--                  <img th:src="@{/images/tick.png}">-->
+<!--                  <h2>Thank You!</h2>-->
+<!--                  <p>Your form has been successfully submitted. Thanks!</p>-->
+<!--                  <button type="button" onclick="closePopup()">OK</button>-->
+<!--                </div>-->
+<!--                <script>-->
+<!--                  let popup = document.getElementById("popup");-->
+
+<!--                  function openPopup(){-->
+<!--                    console.log("hello");-->
+<!--                    popup.classList.add("openPopup");-->
+<!--                  }-->
+
+<!--                  function closePopup(){-->
+<!--                    popup.classList.remove("openPopup");-->
+<!--                  }-->
+<!--                </script>-->
+<!--              </div>-->
+
+<!--              <hr class="my-4">-->
+
+<!--              &lt;!&ndash; advanced payment design &ndash;&gt;-->
+
+<!--            </div>-->
+      </div>
+    </main>
+  </div>
+
+
+
+
+
+
+
+
+
+
+    <script th:src="@{/suyogManandhar/assets/dist/js/bootstrap.bundle.min.js}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  </div>
+
+<!--<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">-->
+<!--  <div class="container-fluid">-->
+<!--    <a class="navbar-brand" href="#">KamKuro</a>-->
+<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-md-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" aria-current="page" href="#">Home</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" href="#">Link</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
 <!-- end of nava bar -->
 <br>
 
 
-<h1 class="mt-5 fst-italic ms-">Jobs Available</h1>
+<!--<h1 class="mt-5 fst-italic ms-">Jobs Available</h1>-->
 
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-3 mt-2 g-4 p-4">
+<!--<div class="container">-->
+<!--  <div class="row row-cols-1 row-cols-md-3 mt-2 g-4 p-4">-->
 
-    <div class="col" th:each="item:${items}">
-      <div class="card">
-        <!-- <img src="..." class="card-img-top" alt="..."> -->
-        <div class="card-body">
-          <h9>Job Description</h9>
-<!--          <h5 class="card-title"> UI/UX Designer</h5>-->
-          <h5 th:text="${item.jobPosition}"></h5>
-<!--          <h7>Company Name |</h7>-->
-          <h7 th:text="${item.companyName}"></h7>
-<!--          <h7>Job Type |</h7>-->
-          <h7 th:text="${item.jobType}"></h7>
-<!--          <h7>Salary |</h7>-->
-          <h7 th:text="${item.salary}"></h7>
+<!--    <div class="col" th:each="item:${items}">-->
+<!--      <div class="card">-->
+<!--        &lt;!&ndash; <img src="..." class="card-img-top" alt="..."> &ndash;&gt;-->
+<!--        <div class="card-body">-->
+<!--          <h9>Job Description</h9>-->
+<!--&lt;!&ndash;          <h5 class="card-title"> UI/UX Designer</h5>&ndash;&gt;-->
+<!--          <h5 th:text="${item.jobPosition}"></h5>-->
+<!--&lt;!&ndash;          <h7>Company Name |</h7>&ndash;&gt;-->
+<!--          <h7 th:text="${item.companyName}"></h7>-->
+<!--&lt;!&ndash;          <h7>Job Type |</h7>&ndash;&gt;-->
+<!--          <h7 th:text="${item.jobType}"></h7>-->
+<!--&lt;!&ndash;          <h7>Salary |</h7>&ndash;&gt;-->
+<!--          <h7 th:text="${item.salary}"></h7>-->
 
-          <p class="card-text"></p>
-          <button type="button" class="btn btn-outline-primary btn-sm "><a href="#" th:href="@{/JobListings.html/JobDetails}" >Apply</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<h2 class="fst-italic ms-5">Add Job</h2>
-<div class="container">
-  <form th:method="@{post}" th:action="@{/th-job/save}" th:object="${jobDto}" >
-    <div class="mb-3">
-      <input type="hidden" th:value="${jobDto.id}" th:field="*{id}"/>
-      <label for="exampleFormControlInput1" class="form-label">Company Name</label>
-      <input type="text" th:value="${jobDto.companyName}" th:field="*{companyName}" class="form-control" id="exampleFormControlInput1" placeholder="company name">
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Job Position</label>
-      <input type="text" th:value="${jobDto.jobPosition}" th:field="*{jobPosition}" class="form-control" id="exampleFormControlInput2" placeholder="job position">
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Job Salary</label>
-      <input type="text" th:value="${jobDto.salary}" th:field="*{salary}" class="form-control" id="exampleFormControlInput3" placeholder="job salary">
-    </div>
-
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Job type</label>
-      <input type="text" th:value="${jobDto.jobType}" th:field="*{jobType}" class="form-control" id="exampleFormControlInput4" placeholder="Job type">
-    </div>
-
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button class="btn btn-primary" type="submit">Add Job</button>
+<!--          <p class="card-text"></p>-->
+<!--          <button type="button" class="btn btn-outline-primary btn-sm "><a href="#" th:href="@{/JobListings.html/JobDetails}" >Apply</a></button>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
-    </div>
-  </form>
-</div>
+<!--<h2 class="fst-italic ms-5">Add Job</h2>-->
+<!--<div class="container">-->
+<!--  <form th:method="@{post}" th:action="@{/th-job/save}" th:object="${jobDto}" >-->
+<!--    <div class="mb-3">-->
+<!--      <input type="hidden" th:value="${jobDto.id}" th:field="*{id}"/>-->
+<!--      <label for="exampleFormControlInput1" class="form-label">Company Name</label>-->
+<!--      <input type="text" th:value="${jobDto.companyName}" th:field="*{companyName}" class="form-control" id="exampleFormControlInput1" placeholder="company name">-->
+<!--    </div>-->
+
+<!--    <div class="mb-3">-->
+<!--      <label for="exampleFormControlInput1" class="form-label">Job Position</label>-->
+<!--      <input type="text" th:value="${jobDto.jobPosition}" th:field="*{jobPosition}" class="form-control" id="exampleFormControlInput2" placeholder="job position">-->
+<!--    </div>-->
+
+<!--    <div class="mb-3">-->
+<!--      <label for="exampleFormControlInput1" class="form-label">Job Salary</label>-->
+<!--      <input type="text" th:value="${jobDto.salary}" th:field="*{salary}" class="form-control" id="exampleFormControlInput3" placeholder="job salary">-->
+<!--    </div>-->
+
+<!--    <div class="mb-3">-->
+<!--      <label for="exampleFormControlInput1" class="form-label">Job type</label>-->
+<!--      <input type="text" th:value="${jobDto.jobType}" th:field="*{jobType}" class="form-control" id="exampleFormControlInput4" placeholder="Job type">-->
+<!--    </div>-->
+
+<!--    <div class="d-grid gap-2 col-6 mx-auto">-->
+<!--      <button class="btn btn-primary" type="submit">Add Job</button>-->
+
+
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
 
 </body>
