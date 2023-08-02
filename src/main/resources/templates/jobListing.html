@@ -99,7 +99,7 @@
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">JOBS</h1>
+        <h1 class="h2 text-primary">JOBS</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
@@ -117,8 +117,8 @@
       <div>
 
         <div class="col-md-7 col-lg-8">
-          //jobs available
-          <h1 class="mt-5 fst-italic text-primary">Jobs Available</h1>
+
+          <h1 class="mt-5 fst-italic text-success">Jobs Available</h1>
           <hr class="col-md-7 col-lg-12">
           <div class="container">
             <div class="row row-cols-1 row-cols-md-3 mt-2 g-4 p-4">
@@ -146,34 +146,34 @@
           </div>
           <br>
 
-          <h2 class="fst-italic text-primary mt-5">Add Job</h2>
+          <h2 class="fst-italic text-success fs-2">Add Job</h2>
           <hr>
           <br>
           <div class="container">
             <form th:method="@{post}" th:action="@{/th-job/save}" th:object="${jobDto}" >
               <div class="mb-3">
                 <input type="hidden" th:value="${jobDto.id}" th:field="*{id}"/>
-                <label for="exampleFormControlInput1" class="form-label">Company Name</label>
+                <label for="exampleFormControlInput1" class="form-label fst-italic">Company Name</label>
                 <input type="text" th:value="${jobDto.companyName}" th:field="*{companyName}" class="form-control" id="exampleFormControlInput1" placeholder="company name">
               </div>
 
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Job Position</label>
+                <label for="exampleFormControlInput1" class="form-label fst-italic">Job Position</label>
                 <input type="text" th:value="${jobDto.jobPosition}" th:field="*{jobPosition}" class="form-control" id="exampleFormControlInput2" placeholder="job position">
               </div>
 
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Job Salary</label>
+                <label for="exampleFormControlInput1" class="form-label fst-italic">Job Salary</label>
                 <input type="text" th:value="${jobDto.salary}" th:field="*{salary}" class="form-control" id="exampleFormControlInput3" placeholder="job salary">
               </div>
 
               <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Job type</label>
+                <label for="exampleFormControlInput1" class="form-label fst-italic">Job type</label>
                 <input type="text" th:value="${jobDto.jobType}" th:field="*{jobType}" class="form-control" id="exampleFormControlInput4" placeholder="Job type">
               </div>
               <br>
               <hr>
-
+              <br>
               <div class="d-grid gap-2 col-6 mx-auto">
                 <button class="btn btn-primary" type="submit">Add Job</button>
 
