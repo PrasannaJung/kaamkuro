@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-public class ApplyJobServiceImpl implements ApplyJobService {
+//public class ApplyJobServiceImpl implements ApplyJobService {
 //    private final ApplyJobRepo applyJobRepo;
 //
 //    @Override
@@ -25,7 +25,7 @@ public class ApplyJobServiceImpl implements ApplyJobService {
 //        applyJob.setJobposition(applyJobDto.getJobposition());
         //applyJob.save(applyJobDto);
 
-    }
+//    }
 
 //    @Override
 //    public List<ApplyJob> getData() {
