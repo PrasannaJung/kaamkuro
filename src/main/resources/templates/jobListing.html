@@ -119,7 +119,7 @@
         <div class="col-md-7 col-lg-8">
           //jobs available
           <h1 class="mt-5 fst-italic text-primary">Jobs Available</h1>
-          <hr>
+          <hr class="col-md-7 col-lg-12">
           <div class="container">
             <div class="row row-cols-1 row-cols-md-3 mt-2 g-4 p-4">
 
@@ -144,10 +144,11 @@
               </div>
             </div>
           </div>
+          <br>
 
-
-          <h2 class="fst-italic text-primary">Add Job</h2>
+          <h2 class="fst-italic text-primary mt-5">Add Job</h2>
           <hr>
+          <br>
           <div class="container">
             <form th:method="@{post}" th:action="@{/th-job/save}" th:object="${jobDto}" >
               <div class="mb-3">
@@ -170,6 +171,8 @@
                 <label for="exampleFormControlInput1" class="form-label">Job type</label>
                 <input type="text" th:value="${jobDto.jobType}" th:field="*{jobType}" class="form-control" id="exampleFormControlInput4" placeholder="Job type">
               </div>
+              <br>
+              <hr>
 
               <div class="d-grid gap-2 col-6 mx-auto">
                 <button class="btn btn-primary" type="submit">Add Job</button>
