@@ -25,7 +25,6 @@ public class JobServiceImpl implements JobService {
         job.setSalary(jobDto.getSalary());
         job.setCompanyName(jobDto.getCompanyName());
         job.setJobType(jobDto.getJobType());
-
         jobRepo.save(job);
     }
 
