@@ -32,14 +32,6 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <!-- <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search"> -->
-  <div class="w-100 d-flex justify-content-center align-items-center">
-    <ul class="d-flex text-white align-items-center" style="list-style-type: none; gap: 40px; padding: 0; ">
-      <li>Home</li>
-      <li>About</li>
-      <li>Companies</li>
-      <li>Jobs</li>
-    </ul>
-  </div>
   <div class="navbar-nav">
     <div class="nav-item text-nowrap">
       <a class="nav-link px-3" href="#">Sign out</a>
@@ -53,14 +45,14 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" th:href="@{/Jobs}">
               <span data-feather="shopping-cart"></span>
               Job listing
             </a>
             <br>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" th:href="@{/employee/profile}">
               <span data-feather="users"></span>
               Profile
             </a>
@@ -74,7 +66,7 @@
             <br>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" th:href="@{/home}">
               <span data-feather="layers"></span>
               home
             </a>
