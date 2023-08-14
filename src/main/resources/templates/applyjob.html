@@ -19,19 +19,19 @@
     <link th:href="@{/suyogManandhar/assets/dist/css/bootstrap.min.css}" rel="stylesheet">
 
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
         }
-      }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
     </style>
 
 
@@ -41,7 +41,7 @@
 <body>
 
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow align-items-center">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">KamKuro</a>
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -119,12 +119,12 @@
                     <div class="btn-group me-2">
                         <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
                         <button type="button" >
-                          <a class="btn btn-sm " th:href="@{/images/tick.png}" download>Download
-                          <i class="fa fa-download"></i>
-                        </a>
-                      </button>
+                            <a class="btn btn-sm " th:href="@{/images/tick.png}" download>Download
+                                <i class="fa fa-download"></i>
+                            </a>
+                        </button>
                     </div>
-                    
+
                 </div>
             </div>
 
@@ -137,15 +137,15 @@
                     <div class="">
                         <img class="golo" th:src="@{/images/Google.png}" alt="">
                         <br> <br>
-                        
+
                         <p class="Verified">Verified <img class="tick" th:src="@{/images/tick.png}" alt=""></p>
 
                     </div>
-                    <form class="needs-validation" novalidate>
+                    <form class="needs-validation" novalidate th:method="@{post}" th:action="@{/save}" th:object="${applyJobDto}">
                         <div class="row g-3">
                             <div class="mb-3">
                                 <label  for="formFile" class="form-label">Your CV</label>
-                                <input name="cv" class="form-control" type="file" id="formFile">
+                                <input name="cv" th:value="${applyJobDto.cv}" th:field="*{cv}" class="form-control" type="file" id="formFile">
                                 <div class="invalid-feedback">
                                     Valid first name is required.
                                 </div>
@@ -153,12 +153,12 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                <input name="email" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input name="email" type="email" th:value="${applyJobDto.email}" th:field="*{email}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                             </div>
 
                             <div class="mb-3">
                                 <label  for="exampleFormControlTextarea1" class="form-label">Tell something about you </label>
-                                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea name="description" th:value="${applyJobDto.description}" th:field="*{description}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
 
@@ -166,19 +166,19 @@
                                 <label for="username" class="form-label">Fullname</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">@</span>
-                                    <input name="fullname" type="text" class="form-control" id="username" placeholder="FullName" required>
+                                    <input name="fullname" type="text" th:value="${applyJobDto.fullname}" th:field="*{fullname}" class="form-control" id="username" placeholder="FullName" required>
                                     <div class="invalid-feedback">
                                         Your username is required.
                                     </div>
                                 </div>
                                 <div class="valid-feedback">
-                                  Looks good!
-                              </div>
+                                    Looks good!
+                                </div>
                             </div>
 
                             <div class="col-12">
                                 <label for="address" class="form-label">Job Position</label>
-                                <input name="jobposition" type="text" class="form-control" id="jobposition" placeholder="manager" required>
+                                <input name="jobposition" type="text" th:value="${applyJobDto.jobposition}" th:field="*{jobposition}" class="form-control" id="jobposition" placeholder="manager" required>
                                 <div class="invalid-feedback">
                                     Please enter a position.
                                 </div>
@@ -187,7 +187,7 @@
 
                             <div class="col-12">
                                 <label for="address" class="form-label">Address</label>
-                                <input name="address" type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                                <input name="address" type="text" th:value="${applyJobDto.address}" th:field="*{address}" class="form-control" id="address" placeholder="1234 Main St" required>
                                 <div class="invalid-feedback">
                                     Please enter your real address.
                                 </div>
@@ -196,12 +196,7 @@
 
                             <div class="col-md-5">
                                 <label  for="country" class="form-label">Country</label>
-                                <select class="form-select" id="country" name="country" required>
-                                    <option value="">Choose...</option>
-                                    <option>Nepal</option>
-                                    <option>India</option>
-
-                                </select>
+                                <input name="address" type="text" th:value="${applyJobDto.country}" th:field="*{country}" class="form-control" id="country" placeholder="1234 Main St" required>
                                 <div class="invalid-feedback">
                                     Please select a valid country.
                                 </div>
@@ -210,7 +205,7 @@
 
                             <div class="col-md-3">
                                 <label for="zip" class="form-label">Phone number</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" name="phoneNumber" required>
+                                <input type="text" th:value="${applyJobDto.phoneNumber}" th:field="*{phoneNumber}" class="form-control" id="zip" placeholder="" name="phoneNumber" required>
                                 <div class="invalid-feedback">
                                     Valid phone number required
                                 </div>
@@ -219,46 +214,46 @@
                         <br>
 
 
-<!--                        pop up -->
+                        <!--                        pop up -->
                         <div class="">
 
-                          <div class="form-group">
-                            <div class="form-check ">
-                              <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
-                              <label class="form-check-label" for="invalidCheck3">
-                                Agree to terms and conditions
-                              </label>
-                              <div class="invalid-feedback">
-                                You must agree before submitting.
-                              </div>
+                            <div class="form-group">
+                                <div class="form-check ">
+                                    <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                                    <label class="form-check-label" for="invalidCheck3">
+                                        Agree to terms and conditions
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+
+                                <button type="button" class="btnz" onclick="openPopup()" >Submit</button>
+                                <div class="popup" id="popup">
+                                    <img th:src="@{/images/tick.png}">
+                                    <h2>Thank You!</h2>
+                                    <p>Your form has been successfully submitted. Thanks!</p>
+                                    <button type="button" onclick="closePopup()">OK</button>
+                                </div>
+                                <script>
+                                    let popup = document.getElementById("popup");
+
+                                    function openPopup(){
+                                        console.log("hello");
+                                        popup.classList.add("openPopup");
+                                    }
+
+                                    function closePopup(){
+                                        popup.classList.remove("openPopup");
+                                    }
+                                </script>
                             </div>
 
-                            <button type="button" class="btnz" onclick="openPopup()" >Submit</button>
-                            <div class="popup" id="popup">
-                                <img th:src="@{/images/tick.png}">
-                                <h2>Thank You!</h2>
-                                <p>Your form has been successfully submitted. Thanks!</p>
-                                <button type="button" onclick="closePopup()">OK</button>
-                            </div>
-                            <script>
-                              let popup = document.getElementById("popup");
-  
-                              function openPopup(){
-                                console.log("hello");
-                              popup.classList.add("openPopup");
-                              }
-  
-                               function closePopup(){
-                              popup.classList.remove("openPopup");
-                              }
-                          </script>
+                            <hr class="my-4">
+
+                            <!-- advanced payment design -->
+
                         </div>
-                       
-                        <hr class="my-4">
-
-                        <!-- advanced payment design -->
-
-                            </div>
                     </form>
                 </div>
             </div>
