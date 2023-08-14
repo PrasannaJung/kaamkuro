@@ -10,7 +10,7 @@ public class PagesController {
         return "homepage";
     }
 
-    @GetMapping("/applyjobs")
+    @GetMapping("/make")
     public String getJobInfo() {return "applyjob" ;}
 
 
