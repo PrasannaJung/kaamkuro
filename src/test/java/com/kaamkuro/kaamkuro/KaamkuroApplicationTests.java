@@ -1,7 +1,9 @@
 package com.kaamkuro.kaamkuro;
 
 import com.kaamkuro.kaamkuro.entity.AuthUser;
+import com.kaamkuro.kaamkuro.entity.Job;
 import com.kaamkuro.kaamkuro.repo.AuthUserRepo;
+import com.kaamkuro.kaamkuro.repo.JobRepo;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,5 +83,60 @@ class KaamkuroApplicationTests {
 		Assertions.assertThat(user1).isNull();
 	}
 
+	//Job posting test
+	@Autowired
+	private JobRepo jobRepo;
 
+	@Test
+	@Order(6)
+	@Rollback(value = false)
+	public void saveJobTest(){
+		Job job = Job.builder()
+				.id(1)
+				.jobType("part time")
+				.salary("100000")
+				.jobPosition("CEO")
+				.companyName("Company")
+				.build();
+		jobRepo.save(job);
+		Assertions.assertThat(job.getId()).isGreaterThan(0);
+	}
+
+	@Test
+	@Order(7)
+	public  void getJobsTest(){
+		Job job= jobRepo.findById(1).get();
+		Assertions.assertThat(job.getId()).isEqualTo(1);
+	}
+
+	@Test
+	@Order(8)
+	public void getListOfJobTest(){
+		List<Job> job = jobRepo.findAll();
+		Assertions.assertThat(job.size()).isGreaterThan(0);
+	}
+
+	@Test
+	@Order(9)
+	public void updateJobTest(){
+		Job job = jobRepo.findById(1).get();
+		job.setSalary("100000");
+		Job jobUpdate =  jobRepo.save(job);
+
+		Assertions.assertThat(jobUpdate.getSalary()).isEqualTo("100000");
+	}
+	@Test
+	@Order(10)
+	@Rollback(value = false)
+	public void deleteJobTest(){
+		Job job = jobRepo.findById(1).get();
+		jobRepo.delete(job);
+
+		Job firstjob = null;
+		Optional<Job> optionalJob = jobRepo.findById(1);
+		if(optionalJob.isPresent()){
+			firstjob = optionalJob.get();
+		}
+		Assertions.assertThat(firstjob).isNull();
+	}
 }
