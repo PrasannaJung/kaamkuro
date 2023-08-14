@@ -141,15 +141,12 @@
                         <p class="Verified">Verified <img class="tick" th:src="@{/images/tick.png}" alt=""></p>
 
                     </div>
-                    <form class="needs-validation" novalidate th:method="@{post}" th:action="@{/save}" th:object="${applyJobDto}">
+                    <form class="needs-validation" novalidate th:method="@{post}" th:action="@{/th-admin/save}" th:object="${applyJobDto}">
                         <div class="row g-3">
-                            <div class="mb-3">
-                                <label  for="formFile" class="form-label">Your CV</label>
-                                <input name="cv" th:value="${applyJobDto.cv}" th:field="*{cv}" class="form-control" type="file" id="formFile">
-                                <div class="invalid-feedback">
-                                    Valid first name is required.
-                                </div>
-                            </div>
+<!--                            <div class="mb-3">-->
+<!--                                <label  for="formFile" class="form-label">Your CV</label>-->
+<!--                                <input name="cv" th:value="${applyJobDto.cv}" th:field="*{cv}" class="form-control" type="text" id="formFile">-->
+<!--                            </div>-->
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Email address</label>

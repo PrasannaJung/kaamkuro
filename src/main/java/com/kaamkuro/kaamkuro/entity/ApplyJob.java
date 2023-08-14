@@ -34,8 +34,8 @@ public class ApplyJob {
     private String phoneNumber;
 
 
-    @Column(name = "cv", nullable = false)
-    private String cv;
+//    @Column(name = "cv", nullable = true)
+//    private String cv;
 
 
     @Column(name = "email", nullable = false)

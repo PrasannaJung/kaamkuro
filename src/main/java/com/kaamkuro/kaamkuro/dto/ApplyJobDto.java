@@ -27,8 +27,8 @@ public class ApplyJobDto {
     @NotEmpty(message = "name can't be empty")
     private String address;
 
-    @NotEmpty(message = "name can't be empty")
-    private String cv;
+//    @NotEmpty(message = "name can't be empty")
+//    private String cv;
 
     @NotEmpty(message = "name can't be empty")
     private String description;
@@ -53,7 +53,7 @@ public class ApplyJobDto {
         this.jobposition = applyJob.getJobposition();
         this.description = applyJob.getDescription();
         this.country = applyJob.getCountry();
-        this.cv = applyJob.getCv();
+//        this.cv = applyJob.getCv();
         this.address = applyJob.getAddress();
 
     }
