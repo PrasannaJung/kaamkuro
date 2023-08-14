@@ -23,6 +23,7 @@ public class ApplyJobServiceImpl implements ApplyJobService {
         applyJob.setId(applyJobDto.getId());
         applyJob.setFullname(applyJobDto.getFullname());
         applyJob.setEmail(applyJobDto.getEmail());
+        applyJob.setAddress(applyJobDto.getAddress());
         applyJob.setPhoneNumber(applyJobDto.getPhoneNumber());
 //        applyJob.setCv(applyJobDto.getCv());
         applyJob.setCountry(applyJobDto.getCountry());

@@ -150,12 +150,12 @@
 
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                <input name="email" type="email" th:value="${applyJobDto.email}" th:field="*{email}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input name="email" type="email" th:field="*{email}" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                             </div>
 
                             <div class="mb-3">
                                 <label  for="exampleFormControlTextarea1" class="form-label">Tell something about you </label>
-                                <textarea name="description" th:value="${applyJobDto.description}" th:field="*{description}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea name="description" th:field="*{description}" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
 
@@ -163,7 +163,7 @@
                                 <label for="username" class="form-label">Fullname</label>
                                 <div class="input-group has-validation">
                                     <span class="input-group-text">@</span>
-                                    <input name="fullname" type="text" th:value="${applyJobDto.fullname}" th:field="*{fullname}" class="form-control" id="username" placeholder="FullName" required>
+                                    <input name="fullname" type="text" th:field="*{fullname}" class="form-control" id="username" placeholder="FullName" required>
                                     <div class="invalid-feedback">
                                         Your username is required.
                                     </div>
@@ -175,7 +175,7 @@
 
                             <div class="col-12">
                                 <label for="address" class="form-label">Job Position</label>
-                                <input name="jobposition" type="text" th:value="${applyJobDto.jobposition}" th:field="*{jobposition}" class="form-control" id="jobposition" placeholder="manager" required>
+                                <input name="jobposition" type="text" th:field="*{jobposition}" class="form-control" id="jobposition" placeholder="manager" required>
                                 <div class="invalid-feedback">
                                     Please enter a position.
                                 </div>
@@ -184,16 +184,13 @@
 
                             <div class="col-12">
                                 <label for="address" class="form-label">Address</label>
-                                <input name="address" type="text" th:value="${applyJobDto.address}" th:field="*{address}" class="form-control" id="address" placeholder="1234 Main St" required>
-                                <div class="invalid-feedback">
-                                    Please enter your real address.
-                                </div>
+                                <input name="address" type="text" th:field="*{address}" class="form-control" id="address" placeholder="1234 Main St" required>
                             </div>
 
 
                             <div class="col-md-5">
                                 <label  for="country" class="form-label">Country</label>
-                                <input name="address" type="text" th:value="${applyJobDto.country}" th:field="*{country}" class="form-control" id="country" placeholder="1234 Main St" required>
+                                <input name="address" type="text" th:field="*{country}" class="form-control" id="country" placeholder="1234 Main St" required>
                                 <div class="invalid-feedback">
                                     Please select a valid country.
                                 </div>
@@ -202,7 +199,7 @@
 
                             <div class="col-md-3">
                                 <label for="zip" class="form-label">Phone number</label>
-                                <input type="text" th:value="${applyJobDto.phoneNumber}" th:field="*{phoneNumber}" class="form-control" id="zip" placeholder="" name="phoneNumber" required>
+                                <input type="text" th:field="*{phoneNumber}" class="form-control" id="zip" placeholder="" name="phoneNumber" required>
                                 <div class="invalid-feedback">
                                     Valid phone number required
                                 </div>
@@ -225,7 +222,7 @@
                                     </div>
                                 </div>
 
-                                <button type="button" class="btnz" onclick="openPopup()" >Submit</button>
+                                <button type="submit" class="btnz" onclick="openPopup()" >Submit</button>
                                 <div class="popup" id="popup">
                                     <img th:src="@{/images/tick.png}">
                                     <h2>Thank You!</h2>

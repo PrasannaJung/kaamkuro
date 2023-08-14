@@ -24,7 +24,7 @@ public class ApplyJob {
     @Column(name = "jobposition", nullable = false)
     private String jobposition;
 
-    @Column(name = "address", length = 5, nullable = false)
+    @Column(name = "address", nullable = false)
     private String address;
 
     @Column(name = "country", nullable = false)

@@ -39,7 +39,7 @@ public class ThymeLeafApplyJobController {
     @PostMapping("/save")
     public String saveData(@Valid ApplyJobDto applyJobDto) throws IOException {
         applyJobService.saveData(applyJobDto);
-        return "redirect:/th-admin/table";
+        return "redirect:/home";
     }
 
     public String getCurrentUser() {
