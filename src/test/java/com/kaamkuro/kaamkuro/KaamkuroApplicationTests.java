@@ -103,17 +103,27 @@ class KaamkuroApplicationTests {
 	}
 
 	@Test
-	@Order(2)
+	@Order(7)
 	public  void getJobsTest(){
 		Job job= jobRepo.findById(1).get();
 		Assertions.assertThat(job.getId()).isEqualTo(1);
 	}
 
 	@Test
-	@Order(3)
+	@Order(8)
 	public void getListOfJobTest(){
 		List<Job> job = jobRepo.findAll();
 		Assertions.assertThat(job.size()).isGreaterThan(0);
+	}
+
+	@Test
+	@Order(9)
+	public void updateJobTest(){
+		Job job = jobRepo.findById(1).get();
+		job.setSalary("100000");
+		Job jobUpdate =  jobRepo.save(job);
+
+		Assertions.assertThat(jobUpdate.getSalary()).isEqualTo("100000");
 	}
 
 }
