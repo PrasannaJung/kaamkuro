@@ -90,94 +90,94 @@
 
       </div>
     </nav>
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">User profile</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
-            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" >
-              <a class="btn btn-sm " th:href="@{/images/tick.png}" download>Download
-                <i class="fa fa-download"></i>
-              </a>
-            </button>
-          </div>
-
+      </div>
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">User profile</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+          <button type="button" >
+            <a class="btn btn-sm " th:href="@{/images/tick.png}" download>Download
+              <i class="fa fa-download"></i>
+            </a>
+          </button>
         </div>
+
+      </div>
+    </div>
+
+    <!-- Job posting form -->
+    <div>
+
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Fill your details</h4>
       </div>
 
-      <!-- Job posting form -->
-      <div>
-
-        <div class="col-md-7 col-lg-8">
-          <h4 class="mb-3">Fill your details</h4>
-              </div>
-
-        <form th:action="@{/employee/profile/update}" th:method="@{post}">
-          <input type="hidden" name="id" th:value="${profile.id}">
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput7" class="form-label">Email address</label>
-              <input th:value="${profile.email}" type="email" class="form-control" name="email" id="exampleFormControlInput7" placeholder="">
-            </div>
+      <form th:action="@{/employee/profile/update}" th:method="@{post}">
+        <input type="hidden" name="id" th:value="${profile.id}">
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput7" class="form-label">Email address</label>
+            <input th:value="${profile.email}" type="email" class="form-control" name="email" id="exampleFormControlInput7" placeholder="">
           </div>
-
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput8" class="form-label">Username</label>
-              <input type="text" class="form-control" id="exampleFormControlInput8" th:value="${profile.name}" name="name" placeholder="">
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Description</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" th:value="${profile.desc}" name="mydescription" placeholder="">
-            </div>
-          </div>
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput6" class="form-label">Age</label>
-              <input type="number" class="form-control" id="exampleFormControlInput6" th:value="${profile.age}" name="age" placeholder="">
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput2" class="form-label">New Password</label>
-              <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="">
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput3" class="form-label">Language(Major)</label>
-              <input type="text" class="form-control" id="exampleFormControlInput3" th:value="${profile.mainLang}" name="language" placeholder="Nepali">
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput4" class="form-label">Profession(What do you do?)</label>
-              <input type="text" class="form-control" id="exampleFormControlInput4" th:value="${profile.profession}" name="profession" placeholder="Student">
-            </div>
-          </div>
-
-          <div class="col-12">
-            <div class="mb-3">
-              <label for="exampleFormControlInput5" class="form-label">Major Skill</label>
-              <input type="text" class="form-control" id="exampleFormControlInput5" th:value="${profile.skill}" name="skill" placeholder="UI/UX Designer">
-            </div>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="bg-success px-3 py-1 btn-lg">Save Changes</button>
-          </div>
-
-        </form>
-
-
-
         </div>
-      </div>
+
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput8" class="form-label">Username</label>
+            <input type="text" class="form-control" id="exampleFormControlInput8" th:value="${profile.name}" name="name" placeholder="">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Description</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" th:value="${profile.desc}" name="mydescription" placeholder="">
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput6" class="form-label">Age</label>
+            <input type="number" class="form-control" id="exampleFormControlInput6" th:value="${profile.age}" name="age" placeholder="">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput2" class="form-label">New Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput2" name="password" placeholder="">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput3" class="form-label">Language(Major)</label>
+            <input type="text" class="form-control" id="exampleFormControlInput3" th:value="${profile.mainLang}" name="language" placeholder="Nepali">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput4" class="form-label">Profession(What do you do?)</label>
+            <input type="text" class="form-control" id="exampleFormControlInput4" th:value="${profile.profession}" name="profession" placeholder="Student">
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="mb-3">
+            <label for="exampleFormControlInput5" class="form-label">Major Skill</label>
+            <input type="text" class="form-control" id="exampleFormControlInput5" th:value="${profile.skill}" name="skill" placeholder="UI/UX Designer">
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="bg-success px-3 py-1 btn-lg">Save Changes</button>
+        </div>
+
+      </form>
+
+
+
+    </div>
+  </main>
 
 
 
@@ -191,6 +191,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
 
-
+</div>
 </body>
 </html>
