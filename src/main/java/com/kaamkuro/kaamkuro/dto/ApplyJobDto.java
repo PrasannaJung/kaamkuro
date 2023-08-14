@@ -49,12 +49,12 @@ public class ApplyJobDto {
         this.id=applyJob.getId();
         this.fullname = applyJob.getFullname();
         this.email = applyJob.getEmail();
-        //this.phoneNumber = applyJob.getPhoneNumber();
+        this.phoneNumber = applyJob.getPhoneNumber();
         this.jobposition = applyJob.getJobposition();
         this.description = applyJob.getDescription();
         this.country = applyJob.getCountry();
         this.cv = applyJob.getCv();
-        //this.address = applyJob.getAddress();
+        this.address = applyJob.getAddress();
 
     }
 
