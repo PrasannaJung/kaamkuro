@@ -12,7 +12,7 @@ public class PagesController {
 
     @GetMapping("/applyjobs")
     public String getJobInfo() {return "applyjob" ;}
-    
+
 
     @GetMapping("/user/resume")
     public String getResumePage(){
