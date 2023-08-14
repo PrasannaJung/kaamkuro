@@ -1,7 +1,9 @@
 package com.kaamkuro.kaamkuro;
 
 import com.kaamkuro.kaamkuro.entity.AuthUser;
+import com.kaamkuro.kaamkuro.entity.Job;
 import com.kaamkuro.kaamkuro.repo.AuthUserRepo;
+import com.kaamkuro.kaamkuro.repo.JobRepo;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,5 +83,22 @@ class KaamkuroApplicationTests {
 		Assertions.assertThat(user1).isNull();
 	}
 
+	//Job posting test
+	@Autowired
+	private JobRepo jobRepo;
 
+	@Test
+	@Order(6)
+	@Rollback(value = false)
+	public void saveJobTest(){
+		Job job = Job.builder()
+				.id(1)
+				.jobType("part time")
+				.salary("100000")
+				.jobPosition("CEO")
+				.companyName("Company")
+				.build();
+		jobRepo.save(job);
+		Assertions.assertThat(job.getId()).isGreaterThan(0);
+	}
 }
