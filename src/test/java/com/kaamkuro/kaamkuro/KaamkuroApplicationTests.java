@@ -101,4 +101,19 @@ class KaamkuroApplicationTests {
 		jobRepo.save(job);
 		Assertions.assertThat(job.getId()).isGreaterThan(0);
 	}
+
+	@Test
+	@Order(2)
+	public  void getJobsTest(){
+		Job job= jobRepo.findById(1).get();
+		Assertions.assertThat(job.getId()).isEqualTo(1);
+	}
+
+	@Test
+	@Order(3)
+	public void getListOfJobTest(){
+		List<Job> job = jobRepo.findAll();
+		Assertions.assertThat(job.size()).isGreaterThan(0);
+	}
+
 }
