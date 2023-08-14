@@ -14,19 +14,6 @@ public class PagesController {
     public String getJobInfo() {return "applyjob" ;}
 
 
-    @GetMapping("/Joblisting")
-    public String getJobListing(){
-        return "JobListings";
-    }
-    @GetMapping("/Joblisting/JobDetails")
-    public String getJobDetails(){
-        return "JobDetails";
-    }
-    @GetMapping("/user/profile")
-    public String getProfilePage(){
-        return "profile";
-    }
-
     @GetMapping("/user/resume")
     public String getResumePage(){
         return "Resume";
