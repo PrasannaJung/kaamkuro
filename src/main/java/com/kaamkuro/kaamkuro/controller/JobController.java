@@ -32,12 +32,12 @@ public class JobController {
     @GetMapping("/table")
     public String getDataView(Model model) {
         model.addAttribute("items", applyJobService.getData());
-        model.addAttribute("currentuser", getCurrentUser());
+//        model.addAttribute("currentuser", getCurrentUser());
         return "table.html";
     }
-    public String getCurrentUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentemail = authentication.getName();
-        return currentemail;
-    }
+//    public String getCurrentUser() {
+//        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//        String currentemail = authentication.getName();
+//        return currentemail;
+//    }
 }
