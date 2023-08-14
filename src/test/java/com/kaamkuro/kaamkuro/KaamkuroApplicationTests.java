@@ -125,5 +125,18 @@ class KaamkuroApplicationTests {
 
 		Assertions.assertThat(jobUpdate.getSalary()).isEqualTo("100000");
 	}
+	@Test
+	@Order(10)
+	@Rollback(value = false)
+	public void deleteJobTest(){
+		Job job = jobRepo.findById(1).get();
+		jobRepo.delete(job);
 
+		Job firstjob = null;
+		Optional<Job> optionalJob = jobRepo.findById(1);
+		if(optionalJob.isPresent()){
+			firstjob = optionalJob.get();
+		}
+		Assertions.assertThat(firstjob).isNull();
+	}
 }
