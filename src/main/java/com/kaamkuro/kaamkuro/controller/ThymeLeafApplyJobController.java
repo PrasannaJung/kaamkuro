@@ -22,12 +22,7 @@ import java.io.IOException;
 public class ThymeLeafApplyJobController {
     private final ApplyJobService applyJobService;
 
-    @GetMapping("/table")
-    public String getDataView(Model model) {
-        model.addAttribute("items", applyJobService.getData());
-        model.addAttribute("currentuser", getCurrentUser());
-        return "table.html";
-    }
+
 
 
     @GetMapping("/make")
@@ -40,12 +35,6 @@ public class ThymeLeafApplyJobController {
     public String saveData(@Valid ApplyJobDto applyJobDto) throws IOException {
         applyJobService.saveData(applyJobDto);
         return "redirect:/home";
-    }
-
-    public String getCurrentUser() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        String currentemail = authentication.getName();
-        return currentemail;
     }
 
 }
