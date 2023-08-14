@@ -24,8 +24,8 @@ public class ApplyJob {
     @Column(name = "jobposition", nullable = false)
     private String jobposition;
 
-    @Column(name = "address", length = 5, nullable = false)
-    private Integer address;
+    @Column(name = "address", nullable = false)
+    private String address;
 
     @Column(name = "country", nullable = false)
     private String country;
@@ -34,8 +34,8 @@ public class ApplyJob {
     private String phoneNumber;
 
 
-    @Column(name = "cv", nullable = false)
-    private String cv;
+//    @Column(name = "cv", nullable = true)
+//    private String cv;
 
 
     @Column(name = "email", nullable = false)

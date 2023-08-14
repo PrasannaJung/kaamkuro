@@ -27,8 +27,8 @@ public class ApplyJobDto {
     @NotEmpty(message = "name can't be empty")
     private String address;
 
-    @NotEmpty(message = "name can't be empty")
-    private String cv;
+//    @NotEmpty(message = "name can't be empty")
+//    private String cv;
 
     @NotEmpty(message = "name can't be empty")
     private String description;
@@ -49,12 +49,12 @@ public class ApplyJobDto {
         this.id=applyJob.getId();
         this.fullname = applyJob.getFullname();
         this.email = applyJob.getEmail();
-        //this.phoneNumber = applyJob.getPhoneNumber();
+        this.phoneNumber = applyJob.getPhoneNumber();
         this.jobposition = applyJob.getJobposition();
         this.description = applyJob.getDescription();
         this.country = applyJob.getCountry();
-        this.cv = applyJob.getCv();
-        //this.address = applyJob.getAddress();
+//        this.cv = applyJob.getCv();
+        this.address = applyJob.getAddress();
 
     }
 

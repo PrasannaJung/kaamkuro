@@ -36,7 +36,7 @@
     <th>email</th>
     <th>phonenumber</th>
     <th>description</th>
-    <th>cv</th>
+<!--    <th>cv</th>-->
     <th>address</th>
     <th>jobposition</th>
     <th>country</th>
@@ -45,9 +45,9 @@
   <tr th:each="item:${items}" >
     <td th:text="${item.fullname}"></td>
     <td th:text="${item.email}"></td>
-    <td th:text="${item.phonenumber}"></td>
+    <td th:text="${item.phoneNumber}"></td>
     <td th:text="${item.description}"></td>
-    <td th:text="${item.cv}"></td>
+<!--    <td th:text="${item.cv}"></td>-->
     <td th:text="${item.address}"></td>
     <td th:text="${item.jobposition}"></td>
     <td th:text="${item.country}"></td>
